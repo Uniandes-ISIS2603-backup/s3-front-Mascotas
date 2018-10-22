@@ -1,3 +1,20 @@
-<p>
-  mascota-adopcion-list works!
-</p>
+<div id="alertPanel" style="text-align: center"></div>
+<div class="container-fluid">
+    <div class="col-md-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Id</th>    
+                    <th>Historia</th>  
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor = "let mascota of mascotas">
+                    <td><span>{{mascota.id}}</span></td>
+                    <td>{{mascota.historia}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

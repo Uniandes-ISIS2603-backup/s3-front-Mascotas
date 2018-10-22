@@ -6,6 +6,7 @@ import { MascotaVentaListComponent } from './mascota-venta-list/mascota-venta-li
   imports: [
     CommonModule
   ],
-  declarations: [MascotaVentaListComponent]
+  declarations: [MascotaVentaListComponent],
+  exports: [MascotaVentaListComponent]
 })
 export class MascotaVentaModule { }
