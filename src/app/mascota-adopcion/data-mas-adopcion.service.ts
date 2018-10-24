@@ -22,6 +22,6 @@ export class DataMasAdopcionService {
      * @returns The list of authors in real time
      */
     getMascotas(): Observable<MascotaAdopcion[]> {
-        return this.http.get<MascotaAdopcion[]>(API_URL + mascotas );
+        return this.http.get<MascotaAdopcion[]>( API_URL + mascotas );
     }
 }

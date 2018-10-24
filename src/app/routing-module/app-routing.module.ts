@@ -3,6 +3,8 @@ import {CommonModule} from '@angular/common';
 import {RouterModule, Routes} from '@angular/router';
 import {MascotaAdopcionListComponent} from '../mascota-adopcion/mascota-adopcion-list/mascota-adopcion-list.component';
 import {MascotaVentaListComponent} from '../mascota-venta/mascota-venta-list/mascota-venta-list.component';
+import {RazaDetailComponent} from '../raza/raza-detail/raza-detail.component';
+import { RazaListComponent } from '../raza/raza-list/raza-list.component';
  
 
 const routes: Routes = [
@@ -25,6 +27,19 @@ const routes: Routes = [
             }
         ]
     },
+    {
+        path: 'razas',
+        children : [
+            {
+                path: 'list',
+                component: RazaListComponent
+            },
+            {
+                path : ':id',
+                component : RazaDetailComponent
+            }
+        ]
+    }
    
 ];
 
