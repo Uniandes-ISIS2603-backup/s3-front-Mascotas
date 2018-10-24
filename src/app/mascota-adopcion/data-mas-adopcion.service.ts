@@ -3,9 +3,10 @@ import { Observable } from 'rxjs';
 
 import{MascotaAdopcion} from'./mascotaAdopcion';
 import { HttpClient } from '@angular/common/http';
+import {environment} from '../../environments/environment'
 
-const API_URL = "../../assets/";
-const mascotas = '/mascotasAdopcion.json';
+const API_URL = environment.apiURL;
+const mascotas = '/mascotaAdopcion';
 
 @Injectable()
 export class DataMasAdopcionService {
