@@ -1,3 +1,20 @@
-<p>
-  raza-list works!
-</p>
+
+<div class="container-fluid">
+    <div class="col-md-2">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Raza</th> 
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor = "let raza of razas">
+                    <td style="cursor: pointer;">
+                        <dd class="figure-caption" routerLink="/razas">{{raza.nombre}}</dd>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
