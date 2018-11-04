@@ -5,6 +5,7 @@ import {MascotaAdopcionListComponent} from '../mascota-adopcion/mascota-adopcion
 import {MascotaVentaListComponent} from '../mascota-venta/mascota-venta-list/mascota-venta-list.component';
 import {RazaDetailComponent} from '../raza/raza-detail/raza-detail.component';
 import { RazaListComponent } from '../raza/raza-list/raza-list.component';
+import {EspecieListComponent} from '../especie/especie-list/especie-list.component';
  
 
 const routes: Routes = [
@@ -15,6 +16,15 @@ const routes: Routes = [
             {
                 path: 'list',
                 component: MascotaAdopcionListComponent
+            }
+        ]
+    },
+    {
+        path: 'especie',
+        children: [
+            {
+                path: 'list',
+                component: EspecieListComponent
             }
         ]
     },

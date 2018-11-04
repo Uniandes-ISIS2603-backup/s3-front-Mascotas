@@ -11,6 +11,7 @@ import { RazaModule} from './raza/raza.module';
 
 
 import {AppRoutingModule} from './routing-module/app-routing.module'
+import {EspecieModule} from './especie/especie.module';
 
 
 
@@ -28,7 +29,8 @@ import {AppRoutingModule} from './routing-module/app-routing.module'
     MascotaModule,
     FormsModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    EspecieModule
   ],
   providers: [],
   bootstrap: [AppComponent]
