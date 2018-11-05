@@ -28,6 +28,8 @@ import {MascotaCreateComponent} from '../mascota/mascota-create/mascota-create.c
 import {HistoriaDetailComponent} from '../historia/historia-detail/historia-detail.component';
 import {HistoriaListComponent} from '../historia/historia-list/historia-list.component';
 import {HistoriaCreateComponent} from '../historia/historia-create/historia-create.component';
+import { CalificacionListComponent } from '../calificacion/calificacion-list/calificacion-list.component';
+import { CalificacionCreateComponent } from '../calificacion/calificacion-create/calificacion-create.component';
 
 
 
@@ -123,6 +125,19 @@ const routes: Routes = [
                 component : HistoriaDetailComponent
             },
             
+        ]
+    },
+    {
+        path: 'calificacion',
+        children : [
+            {
+                path: 'list',
+                component: CalificacionListComponent
+            },
+            {
+                path: 'create',
+                component: CalificacionCreateComponent
+            }
         ]
     }
 ];

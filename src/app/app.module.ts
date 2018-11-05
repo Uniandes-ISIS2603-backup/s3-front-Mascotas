@@ -11,6 +11,7 @@ import { MascotaModule} from './mascota/mascota.module';
 import { RazaModule} from './raza/raza.module';
 import { HistoriaModule} from'./historia/historia.module';
 import { EspecieModule} from './especie/especie.module';
+import { CalificacionModule} from './calificacion/calificacion.module';
 
 
 
@@ -27,7 +28,8 @@ import { EspecieModule} from './especie/especie.module';
     MascotaVentaModule,
     MascotaModule,
     EspecieModule,
-    HistoriaModule
+    HistoriaModule,
+    CalificacionModule
   ],
   providers: [],
   bootstrap: [AppComponent]
