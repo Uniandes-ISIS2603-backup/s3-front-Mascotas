@@ -3,11 +3,12 @@ import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { environment} from '../../environments/environment'
 import { Raza} from'./raza';
+import { razaDetail } from './razaDetail';
 
 
 
 const API_URL = environment.apiURL;
-const mascotas = '/razas';
+const razas = '/razas';
 
 @Injectable()
 export class RazaServiceService {
@@ -25,6 +26,12 @@ export class RazaServiceService {
      */
     getMascotasVenta(): Observable<Raza[]> {
       return this.http.get<Raza[]>( "../../assets/raza.json" );
+    }
+
+
+    getRazaDetail(razaId): Observable<razaDetail> {
+      return this.http.get<razaDetail>(API_URL + razas + '/' + razaId);
+    }
+  
   }
-}
  

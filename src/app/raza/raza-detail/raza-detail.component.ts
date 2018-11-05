@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import {RazaServiceService} from '../raza-service.service';
-import {Raza} from '../raza';
+import {razaDetail} from '../razaDetail';
+
 
 @Component({
   selector: 'app-raza-detail',
@@ -10,9 +11,25 @@ import {Raza} from '../raza';
 })
 export class RazaDetailComponent implements OnInit {
 
-  constructor( ) { }
+  razaId : number;
+  razaDetail : razaDetail;
+
+  constructor(
+    private servicio: RazaServiceService,
+    private route: ActivatedRoute
+  ) { }
+
+  getRazaDetail(): void {
+    this.servicio.getRazaDetail(this.razaId)
+      .subscribe(razaDetail => {
+        this.razaDetail = razaDetail;
+      });
+  }
 
   ngOnInit() {
+    this.razaId = +this.route.snapshot.paramMap.get('id');
+    this.razaDetail = new razaDetail();
+    this.getRazaDetail();
   }
 
 }
