@@ -19,10 +19,10 @@ import { MascotaService } from './mascota.service';
     AppRoutingModule,
     HttpClientModule,
     CommonModule,
-    FormsModule
+    FormsModule,
   ],
-  declarations: [MascotaListComponent, MascotaDetailComponent, MascotaCreateComponent],
-  providers: [ MascotaService],
+  declarations: [MascotaListComponent, MascotaDetailComponent, MascotaCreateComponent ],
+  providers: [ MascotaService ],
   exports: [MascotaListComponent, MascotaDetailComponent, MascotaCreateComponent]
 })
 export class MascotaModule { }

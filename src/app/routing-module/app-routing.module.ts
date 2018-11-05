@@ -33,6 +33,8 @@ import {HistoriaCreateComponent} from '../historia/historia-create/historia-crea
 
 
 
+
+
 const routes: Routes = [
 
     {
@@ -43,13 +45,14 @@ const routes: Routes = [
                 component: EspecieListComponent
             },
             {
-                path: ':id',
-                component: EspecieDetailComponent
-            },
-            {
                 path: 'create',
                 component: EspecieCreateComponent
+            },
+            {
+                path: ':id',
+                component: EspecieDetailComponent
             }
+            
         ]
     },
     {
@@ -60,13 +63,14 @@ const routes: Routes = [
                 component: MascotaVentaListComponent
             },
             {
+                path: 'create',
+                component: MascotaVentaCreateComponent
+            },
+            {
                 path: ':id',
                 component: MascotaVentaDetailComponent
             },
-            {
-                path: 'create',
-                component: MascotaVentaCreateComponent
-            }
+            
         ]
     },
     {
@@ -75,15 +79,18 @@ const routes: Routes = [
             {
                 path: 'list',
                 component: RazaListComponent
-            },
+            } ,
+
+            {
+                path : 'create',
+                component: RazaCreateComponent
+            } ,
+
             {
                 path : ':id',
                 component : RazaDetailComponent
-            },
-            {
-                path: 'create',
-                component: RazaCreateComponent
             }
+            
         ]
     },
     {
@@ -92,17 +99,14 @@ const routes: Routes = [
             {
                 path: 'list',
                 component: MascotaListComponent
-            },
+            } ,
+            
             {
-                path : ':id',
-                component : MascotaDetailComponent
-            },
-            {
-                path: 'create',
-                component: MascotaCreateComponent
+                path : 'create',
+                component : MascotaCreateComponent
             }
         ]
-    },
+    }, 
     {
         path: 'historia',
         children : [
@@ -111,13 +115,14 @@ const routes: Routes = [
                 component: HistoriaListComponent
             },
             {
+                path: 'create',
+                component: HistoriaCreateComponent
+            },
+            {
                 path : ':id',
                 component : HistoriaDetailComponent
             },
-            {
-                path: 'create',
-                component: HistoriaCreateComponent
-            }
+            
         ]
     }
 ];
