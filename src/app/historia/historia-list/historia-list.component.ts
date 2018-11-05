@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { HistoriaService} from '../historia.service';
+import { Historia} from '../historia';
+
 
 @Component({
   selector: 'app-historia-list',
@@ -7,9 +11,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HistoriaListComponent implements OnInit {
 
-  constructor() { }
 
-  ngOnInit() {
-  }
+  constructor(private servicio : HistoriaService ,
+    private route : ActivatedRoute
+    ) {}
+
+ /**
+  * La lista de mascotas. 
+  */
+ historias : Historia[];
+
+ getHistorias(): void{
+   this.servicio.getHistorias()
+   .subscribe( lista => this.historias=lista);
+ }
+
+ ngOnInit() {
+   this.getHistorias();
+ }
 
 }

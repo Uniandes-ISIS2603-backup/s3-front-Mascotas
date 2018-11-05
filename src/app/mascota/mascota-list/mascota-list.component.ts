@@ -15,7 +15,7 @@ export class MascotaListComponent implements OnInit {
     ) {}
 
   /**
-  * La lista de mascotas.
+  * La lista de mascotas. 
   */
   mascotas : Mascota[];
 
