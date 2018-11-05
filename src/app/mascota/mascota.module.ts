@@ -23,8 +23,6 @@ import { MascotaService } from './mascota.service';
   ],
   declarations: [MascotaListComponent, MascotaDetailComponent, MascotaCreateComponent],
   providers: [ MascotaService],
-  exports: [MascotaListComponent, MascotaDetailComponent, MascotaCreateComponent],
-
-
+  exports: [MascotaListComponent, MascotaDetailComponent, MascotaCreateComponent]
 })
 export class MascotaModule { }

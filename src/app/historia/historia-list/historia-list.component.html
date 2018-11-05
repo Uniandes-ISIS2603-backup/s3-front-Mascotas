@@ -19,7 +19,8 @@
     <tbody>
       <tr *ngFor = "let historia of historias">
   
-          <td style="cursor: pointer" routerLink="/mascota/{{historia.id}}"><span>{{historia.id}}</span></td>
+         <!-- <td style="cursor: pointer" routerLink="/mascota/{{historia.id}}"><span>{{historia.id}}</span></td> -->
+         <td style="cursor: pointer">{{historia.id}}</td>
           <td style="cursor: pointer">{{historia.foto}}</td>
           <td style="cursor: pointer">{{historia.texto}}</td>
       </tr>

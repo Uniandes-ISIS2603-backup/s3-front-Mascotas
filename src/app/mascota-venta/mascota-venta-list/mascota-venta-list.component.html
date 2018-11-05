@@ -23,7 +23,8 @@
     </thead>
     <tbody>
       <tr *ngFor = "let mascota of mascotasVenta">
-          <td style="cursor: pointer" routerLink="/mascotaVenta/{{mascota.id}}"><span>{{mascota.id}}</span></td>
+         <!-- <td style="cursor: pointer" routerLink="/mascotaVenta/{{mascota.id}}"><span>{{mascota.id}}</span></td> -->
+         <td style="cursor: pointer">{{mascota.id}}</td>
           <td style="cursor: pointer">{{mascota.documentosPedegree}}</td>
           <td style="cursor: pointer">{{mascota.mascota.nombre}}</td>
           <td style="cursor: pointer">{{mascota.mascota.edad}}</td>
