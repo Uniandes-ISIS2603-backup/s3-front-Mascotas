@@ -1,3 +1,26 @@
-<p>
-  raza-list works!
-</p>
+<div class="container">
+    <nav aria-label="breadcrumb" style="margin-top: 20px;">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item active" aria-current="page">Razas</li>
+      </ol>
+    </nav>
+    <h1>Razas</h1>
+    <p>
+      <a class="btn btn-success" routerLink="/raza/create">Crear una Raza</a>
+    </p>
+    <table class="table">
+    <thead>
+      <tr>
+        <th>Id</th>    
+        <th>Nombre</th>   
+    </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor = "let raza of razas">
+          <td style="cursor: pointer" routerLink="/raza/{{raza.id}}"><span>{{raza.id}}</span></td>
+          <td style="cursor: pointer">{{raza.nombre}}</td>
+      </tr>
+  </tbody>
+  </table>
+  </div>
+  
