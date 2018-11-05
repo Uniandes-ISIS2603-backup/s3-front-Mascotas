@@ -1,7 +1,6 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {RouterModule, Routes} from '@angular/router';
-import {MascotaAdopcionListComponent} from '../mascota-adopcion/mascota-adopcion-list/mascota-adopcion-list.component';
 import {MascotaVentaListComponent} from '../mascota-venta/mascota-venta-list/mascota-venta-list.component';
 import {RazaDetailComponent} from '../raza/raza-detail/raza-detail.component';
 import { RazaListComponent } from '../raza/raza-list/raza-list.component';
@@ -12,15 +11,6 @@ import {EspecieDetailComponent} from '../especie/especie-detail/especie-detail.c
 
 const routes: Routes = [
 
-    {
-        path: 'mascotasAdopcion',
-        children: [
-            {
-                path: 'list',
-                component: MascotaAdopcionListComponent
-            }
-        ]
-    },
     {
         path: 'especie',
         children: [

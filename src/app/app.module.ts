@@ -4,7 +4,6 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { MascotaAdopcionModule} from './mascota-adopcion/mascota-adopcion.module';
 import { MascotaVentaModule} from './mascota-venta/mascota-venta.module';
 import { MascotaModule} from './mascota/mascota.module';
 import { RazaModule} from './raza/raza.module';
@@ -20,7 +19,6 @@ import {EspecieModule} from './especie/especie.module';
   ],
   imports: [
     BrowserModule,
-    MascotaAdopcionModule,
     MascotaVentaModule,
     RazaModule,
     MascotaModule,
