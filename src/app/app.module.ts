@@ -9,11 +9,8 @@ import { MascotaVentaModule} from './mascota-venta/mascota-venta.module';
 import { MascotaModule} from './mascota/mascota.module';
 import { RazaModule} from './raza/raza.module';
 
-
-import {AppRoutingModule} from './routing-module/app-routing.module'
+import {AppRoutingModule} from './routing-module/app-routing.module';
 import {EspecieModule} from './especie/especie.module';
-
-
 
 
 

@@ -6,10 +6,12 @@ import {MascotaVentaListComponent} from '../mascota-venta/mascota-venta-list/mas
 import {RazaDetailComponent} from '../raza/raza-detail/raza-detail.component';
 import { RazaListComponent } from '../raza/raza-list/raza-list.component';
 import {EspecieListComponent} from '../especie/especie-list/especie-list.component';
- 
+import {EspecieCreateComponent} from '../especie/especie-create/especie-create.component';
+import {EspecieDetailComponent} from '../especie/especie-detail/especie-detail.component';
+
 
 const routes: Routes = [
-    
+
     {
         path: 'mascotasAdopcion',
         children: [
@@ -25,6 +27,14 @@ const routes: Routes = [
             {
                 path: 'list',
                 component: EspecieListComponent
+            },
+            {
+                path: ':id',
+                component: EspecieDetailComponent
+            },
+            {
+                path: 'create',
+                component: EspecieCreateComponent
             }
         ]
     },
@@ -50,7 +60,6 @@ const routes: Routes = [
             }
         ]
     }
-   
 ];
 
 @NgModule({
@@ -62,5 +71,4 @@ const routes: Routes = [
     declarations: []
 })
 export class AppRoutingModule {
-    
 }

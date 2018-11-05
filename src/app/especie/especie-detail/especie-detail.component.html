@@ -1,0 +1,23 @@
+<div class="container">
+  <nav aria-label="breadcrumb" style="margin-top: 20px;">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a routerLink="/especie/list">Especies</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Especie {{especieDetail.nombre}}</li>
+    </ol>
+  </nav>
+  <h1>{{especieDetail.nombre}}</h1>
+  <table class="table">
+    <tbody>
+    <tr>
+      <th scope="row">Id</th>
+      <td>{{especieDetail.id}}</td>
+    </tr>
+    <tr>
+      <th scope="row">Nombre</th>
+      <td>{{especieDetail.nombre}}</td>
+    </tr>
+    </tbody>
+  </table>
+
+  <h2>Razas de {{especieDetail.nombre}}</h2>
+</div>

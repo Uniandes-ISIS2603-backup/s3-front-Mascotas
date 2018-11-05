@@ -2,13 +2,17 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { EspecieListComponent } from './especie-list/especie-list.component';
 import {EspecieService} from './especie.service';
+import { EspecieCreateComponent } from './especie-create/especie-create.component';
+import {AppRoutingModule} from '../routing-module/app-routing.module';
+import { EspecieDetailComponent } from './especie-detail/especie-detail.component';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    AppRoutingModule
   ],
   providers: [EspecieService],
-  declarations: [EspecieListComponent],
-  exports: [EspecieListComponent]
+  declarations: [EspecieListComponent, EspecieCreateComponent, EspecieDetailComponent],
+  exports: [EspecieListComponent, EspecieCreateComponent, EspecieDetailComponent]
 })
 export class EspecieModule { }

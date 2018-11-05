@@ -1,20 +1,25 @@
-<div id="alertPanel" style="text-align: center"></div>
-<div class="container-fluid">
-  <div class="col-md-4">
-    <table class="table table-striped">
-      <thead>
-      <tr>
-        <th>Id</th>
-        <th>Especie</th>
-
-      </tr>
-      </thead>
-      <tbody>
-      <tr *ngFor = "let especie of especies">
-        <td><span>{{especie.id}}</span></td>
-        <td>{{especie.nombre}}</td>
-      </tr>
-      </tbody>
-    </table>
-  </div>
+<div class="container">
+  <nav aria-label="breadcrumb" style="margin-top: 20px;">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item active" aria-current="page">Especies</li>
+    </ol>
+  </nav>
+  <h1>Especies</h1>
+  <p>
+    <a class="btn btn-success" routerLink="/especie/create">Crear una especie</a>
+  </p>
+  <table class="table">
+  <thead>
+  <tr>
+    <th scope="col">Id</th>
+    <th scope="col">Nombre</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor = "let especie of especies">
+    <td style="cursor: pointer" routerLink="/especie/{{especie.id}}"><span>{{especie.id}}</span></td>
+    <td style="cursor: pointer">{{especie.nombre}}</td>
+  </tr>
+  </tbody>
+</table>
 </div>
