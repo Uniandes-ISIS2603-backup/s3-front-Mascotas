@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import {MascotaService} from '../mascota.service';
-import {Mascota} from '../mascota';
+import { MascotaService} from '../mascota.service';
+import { Mascota} from '../mascota';
 
 @Component({
   selector: 'app-mascota-list',
