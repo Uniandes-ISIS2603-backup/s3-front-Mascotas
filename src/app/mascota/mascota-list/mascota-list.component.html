@@ -1,3 +1,35 @@
-<p>
-  mascota-list works!
-</p>
+<div class="container">
+  <nav aria-label="breadcrumb" style="margin-top: 20px;">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item active" aria-current="page">Mascotas</li>
+    </ol>
+  </nav>
+  <h1>Mascotas</h1>
+  <p>
+    <a class="btn btn-success" routerLink="/especie/create">Crear una Mascota</a>
+  </p>
+  <table class="table">
+  <thead>
+    <tr>
+      <th>Id</th>    
+      <th>Nombre</th>  
+      <th>Edad</th>  
+      <th>Genero</th>  
+      <th>Color</th>  
+      <th>Precio</th>  
+      <th>Raza</th>  
+  </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor = "let mascota of mascotas">
+        <td><span>{{mascota.id}}</span></td>
+        <td>{{mascota.nombre}}</td>
+        <td>{{mascota.edad}}</td>
+        <td>{{mascota.genero}}</td>
+        <td>{{mascota.color}}</td>
+        <td>{{mascota.precio}}</td>
+        <td>{{mascota.raza.nombre}}</td>
+    </tr>
+</tbody>
+</table>
+</div>

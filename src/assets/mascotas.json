@@ -1,0 +1,27 @@
+[
+    {
+        "id": 1,
+        "nombre": "Icker",
+        "edad" : 8,
+        "genero" : "Macho",
+        "color" : "Negro",
+        "precio" : 200000,
+        "raza" : {
+            "id" : 12 ,
+            "nombre" : "Husky Siberiano"
+        }
+    },
+    {
+        "id": 2,
+        "nombre": "Megan",
+        "edad" : 6,
+        "genero" : "Hembra",
+        "color" : "Dorado",
+        "precio" : 400000,
+        "raza" : {
+            "id" : 13 ,
+            "nombre" : "Labrador"
+        }
+    }
+    
+]

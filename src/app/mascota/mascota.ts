@@ -41,4 +41,9 @@ export class Mascota{
      */
     raza : Raza;
 
+    /**
+     * Representa la imagen de la mascota.
+     */
+    imagen : string;
+
 }
