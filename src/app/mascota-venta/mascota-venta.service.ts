@@ -24,6 +24,8 @@ export class MascotaVentaService {
      * @returns The list of authors in real time
      */
     getMascotasVenta(): Observable<MascotaVenta[]> {
-      return this.http.get<MascotaVenta[]>( "../../assets/mascotaVenta.json" );
+      //return this.http.get<MascotaVenta[]>( "../../assets/mascotaVenta.json" );
+      return this.http.get<MascotaVenta[]>( API_URL + mascotas );
+
   }
 }
