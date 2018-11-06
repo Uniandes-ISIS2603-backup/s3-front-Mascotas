@@ -9,27 +9,27 @@ export class Mascota{
     /**
      * Representa el identificador de la mascota.
      */
-    id : number;
+    id: number;
 
     /**
      * Representa el nombre de la mascota.
      */
-    nombre : string;
+    nombre: string;
 
     /**
      * Representa la edad de la mascota.
      */
-    edad : number;
+    edad: number;
 
     /**
      * Representa el género de la mascota.
      */
-    genero : string;
+    genero: string;
 
     /**
      * Representa el color de la mascota.
      */
-    color : string;
+    color: string;
 
     /**
      * Representa el precio de la mascota.

@@ -30,6 +30,10 @@ import {HistoriaListComponent} from '../historia/historia-list/historia-list.com
 import {HistoriaCreateComponent} from '../historia/historia-create/historia-create.component';
 import { CalificacionListComponent } from '../calificacion/calificacion-list/calificacion-list.component';
 import { CalificacionCreateComponent } from '../calificacion/calificacion-create/calificacion-create.component';
+import {CompraListComponent} from '../compra/compra-list/compra-list.component';
+import {ClienteListComponent} from '../cliente/cliente-list/cliente-list.component';
+import {ClienteCreateComponent} from '../cliente/cliente-create/cliente-create.component';
+import {ClienteDetailComponent} from '../cliente/cliente-detail/cliente-detail.component';
 
 
 
@@ -54,7 +58,40 @@ const routes: Routes = [
                 path: ':id',
                 component: EspecieDetailComponent
             }
-            
+        ]
+    },
+  {
+    path: 'compra',
+    children: [
+      {
+        path: 'list',
+        component: CompraListComponent
+      },
+      {
+        path: 'create',
+        component: EspecieCreateComponent
+      },
+      {
+        path: ':id',
+        component: EspecieDetailComponent
+      }
+    ]
+  },
+    {
+        path: 'cliente',
+        children: [
+            {
+                path: 'list',
+                component: ClienteListComponent
+            },
+            {
+                path: 'create',
+                component: ClienteCreateComponent
+            },
+            {
+                path: ':id',
+                component: ClienteDetailComponent
+            }
         ]
     },
     {
@@ -72,7 +109,6 @@ const routes: Routes = [
                 path: ':id',
                 component: MascotaVentaDetailComponent
             },
-            
         ]
     },
     {
@@ -92,7 +128,6 @@ const routes: Routes = [
                 path : ':id',
                 component : RazaDetailComponent
             }
-            
         ]
     },
     {
@@ -102,10 +137,13 @@ const routes: Routes = [
                 path: 'list',
                 component: MascotaListComponent
             } ,
-            
             {
                 path : 'create',
                 component : MascotaCreateComponent
+            },
+            {
+                path: ':id',
+                component: MascotaDetailComponent
             }
         ]
     }, 

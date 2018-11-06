@@ -13,7 +13,7 @@ export class EspecieListComponent implements OnInit {
 
   especies: Especie[];
 
-  getEspecies(): void{
+  getEspecies(): void {
     this.especieService.getEspecies().subscribe(
       lista => this.especies = lista
     );

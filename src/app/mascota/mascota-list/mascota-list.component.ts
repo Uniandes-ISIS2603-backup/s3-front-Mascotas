@@ -10,18 +10,17 @@ import { Mascota} from '../mascota';
 })
 export class MascotaListComponent implements OnInit {
 
-  constructor(private mascotaService : MascotaService ,
-    private route : ActivatedRoute
-    ) {}
+  constructor(private mascotaService: MascotaService) {}
 
   /**
-  * La lista de mascotas. 
+  * La lista de mascotas.
   */
-  mascotas : Mascota[];
+  mascotas: Mascota[];
 
-  getMascotas(): void{
-    this.mascotaService.getMascotas()
-    .subscribe( lista => this.mascotas=lista);
+  getMascotas(): void {
+    this.mascotaService.getMascotas().subscribe(
+      lista => this.mascotas = lista
+    );
   }
 
   ngOnInit() {

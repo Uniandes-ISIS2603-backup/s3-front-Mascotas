@@ -1,0 +1,29 @@
+<div class="container">
+  <nav aria-label="breadcrumb" style="margin-top: 20px;">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a routerLink="/cliente/list">Clientes</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Cliente {{clienteDetail.correo}}</li>
+    </ol>
+  </nav>
+  <h1>{{clienteDetail.correo}}</h1>
+  <table class="table">
+    <tbody>
+    <tr>
+      <th scope="row">Id</th>
+      <td>{{clienteDetail.id}}</td>
+    </tr>
+    <tr>
+      <th scope="row">Correo</th>
+      <td>{{clienteDetail.correo}}</td>
+    </tr>
+    <tr>
+      <th scope="row">Dirección</th>
+      <td>{{clienteDetail.direccion}}</td>
+    </tr>
+    <tr>
+      <th scope="row">Tarjeta de Crédito</th>
+      <td>{{clienteDetail.tarjetaCreditoRegistrada}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

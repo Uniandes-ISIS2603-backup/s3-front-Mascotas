@@ -22,4 +22,8 @@ export class EspecieService {
   getEspecieDetail(especieId): Observable<EspecieDetail> {
     return this.http.get<EspecieDetail>(API_URL + especies + '/' + especieId);
   }
+
+  createEspecie(especie): Observable<Especie> {
+    return this.http.post<Especie>(API_URL + especies, especie);
+  }
 }

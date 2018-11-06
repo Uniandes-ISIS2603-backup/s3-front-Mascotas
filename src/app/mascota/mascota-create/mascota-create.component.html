@@ -1,3 +1,21 @@
-<p>
-  mascota-create works!
-</p>
+<div class="container">
+  <nav aria-label="breadcrumb" style="margin-top: 20px;">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a routerLink="/mascota/list">Mascotas</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Crear</li>
+    </ol>
+  </nav>
+  <h1>Crear una mascota</h1>
+
+  <form name="especie" (ngSubmit)="f.form.valid && createMascota()" #f="ngForm" novalidate>
+    <div class="form-group">
+      <label for="mascotaNombre">Nombre de la Mascota</label>
+      <input type="text" name="mascotaNombre" class="form-control" id="mascotaNombre" placeholder="Nombre" [(ngModel)]="mascota.nombre"
+             #mascotaNombre="ngModel" [ngClass]="{ 'is-invalid': f.submitted && mascotaNombre.invalid }" required>
+      <div class="invalid-feedback">
+        <div>El nombre es obligatorio</div>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Crear</button>
+  </form>
+</div>

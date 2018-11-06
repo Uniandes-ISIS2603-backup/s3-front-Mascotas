@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {MascotaDetail} from '../mascota-detail';
+import {ActivatedRoute} from '@angular/router';
+import {MascotaService} from '../mascota.service';
 
 
 @Component({
@@ -8,9 +11,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MascotaDetailComponent implements OnInit {
 
-  constructor() { }
+  mascotaId: number;
+  mascotaDetail: MascotaDetail;
+
+  constructor(
+    private mascotaService: MascotaService,
+    private route: ActivatedRoute
+  ) { }
+
+  getMascotaDetail(): void {
+    this.mascotaService.getMascotaDetail(this.mascotaId)
+      .subscribe(mascotaDetail => {
+        this.mascotaDetail = mascotaDetail;
+      });
+  }
 
   ngOnInit() {
+    this.mascotaId = +this.route.snapshot.paramMap.get('id');
+    this.mascotaDetail = new MascotaDetail();
+    this.getMascotaDetail();
   }
 
 }
