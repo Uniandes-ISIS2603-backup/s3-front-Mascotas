@@ -2,16 +2,16 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { environment} from '../../environments/environment'
-import { Calificacion} from'./calificacion';
+import { Calificacion} from './calificacion';
+import {Cliente} from '../cliente/cliente';
+import {Especie} from '../especie/especie';
 
 
 
 const API_URL = environment.apiURL;
-const mascotas = '/calificaciones';
+const calificaciones = '/calificaciones';
 @Injectable()
 export class CalificacionService {
-
-  
    /**
      * Constructor of the service
      * @param http The HttpClient - This is necessary in order to perform requests
@@ -23,7 +23,10 @@ export class CalificacionService {
      * @returns The list of authors in real time
      */
     getCalificaciones(): Observable<Calificacion[]> {
-      return this.http.get<Calificacion[]>( "../../assets/calificacion.json" );
-  }
+        return this.http.get<Calificacion[]>(API_URL + calificaciones);
+    }
+
+    createCalificacion(calificacion): Observable<Calificacion> {
+      return this.http.post<Calificacion>(API_URL + calificacion, calificacion);
+    }
 }
- 

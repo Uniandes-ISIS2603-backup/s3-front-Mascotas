@@ -10,21 +10,19 @@ import { Calificacion} from '../calificacion';
 })
 export class CalificacionListComponent implements OnInit {
 
-  constructor(private servicio : CalificacionService ,
-    private route : ActivatedRoute
-    ) {}
+  constructor(private servicio: CalificacionService) {}
 
   /**
   * La lista de mascotas de venta.
   */
-  calificaciones : Calificacion[];
+  calificaciones: Calificacion[];
 
-  getMascotas(): void{
-    this.servicio.getCalificaciones()
-    .subscribe( lista => this.calificaciones=lista);
+  getCalificaciones(): void {
+    this.servicio.getCalificaciones().subscribe(
+      lista => this.calificaciones =lista);
   }
 
   ngOnInit() {
-    this.getMascotas();
+    this.getCalificaciones();
   }
 }

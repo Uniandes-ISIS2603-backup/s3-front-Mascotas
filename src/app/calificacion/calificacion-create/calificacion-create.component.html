@@ -1,3 +1,29 @@
-<p>
-  calificacion-create works!
-</p>
+<div class="container">
+  <nav aria-label="breadcrumb" style="margin-top: 20px;">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a routerLink="/calificacion/list">Calificaciones</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Crear</li>
+    </ol>
+  </nav>
+  <h1>Crear un calificacion</h1>
+
+  <form name="calificacion" (ngSubmit)="f.form.valid && createCalificacion()" #f="ngForm" novalidate>
+    <div class="form-group">
+      <label for="calificacionPuntaje">Puntaje</label>
+      <input type="text" name="calificacionPuntaje" class="form-control" id="calificacionPuntaje" placeholder="Puntaje" [(ngModel)]="calificacion.puntaje"
+             #calificacionPuntaje="ngModel" [ngClass]="{ 'is-invalid': f.submitted && calificacionPuntaje.invalid }" required>
+      <div class="invalid-feedback">
+        <div>El puntaje es obligatorio</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="calificacionComentario">Comentario</label>
+      <input type="text" name="calificacionComentario" class="form-control" id="calificacionComentario" placeholder="Comentario" [(ngModel)]="calificacion.comentarios"
+             #calificacionComentario="ngModel" [ngClass]="{ 'is-invalid': f.submitted && calificacionComentario.invalid }" required>
+      <div class="invalid-feedback">
+        <div>El puntaje es obligatorio</div>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Crear</button>
+  </form>
+</div>

@@ -10,7 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { RazaListComponent } from './raza-list/raza-list.component';
 import { RazaDetailComponent } from './raza-detail/raza-detail.component';
 import { RazaCreateComponent } from './raza-create/raza-create.component';
-import { RazaServiceService } from'./raza-service.service';
+import { RazaService } from './raza-service';
 
 @NgModule({
   imports: [
@@ -21,7 +21,7 @@ import { RazaServiceService } from'./raza-service.service';
     FormsModule
   ],
   declarations: [ RazaListComponent, RazaDetailComponent, RazaCreateComponent],
-  providers : [ RazaServiceService] ,
+  providers : [ RazaService] ,
   exports : [ RazaListComponent, RazaDetailComponent, RazaCreateComponent]
 })
 export class RazaModule { }

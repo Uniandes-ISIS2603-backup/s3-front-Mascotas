@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { RazaServiceService } from '../raza-service.service';
+import { RazaService } from '../raza-service';
 import { Raza } from '../raza';
 
 @Component({
@@ -10,32 +10,18 @@ import { Raza } from '../raza';
 })
 export class RazaListComponent implements OnInit {
 
-constructor(private servicio : RazaServiceService ,
-    private route : ActivatedRoute
+constructor(private servicio: RazaService ,
+    private route: ActivatedRoute
     ) {}
-
-  /**
-  * La lista de mascotas de venta.
-  */
-  razas : Raza[];
-
-  getRazas(): void{
-    this.servicio.getMascotasVenta()
-    .subscribe( lista => this.razas=lista);
-  }
 
   /**
    * La lista de razas que pertenece a la tienda
    */
   razas: Raza[];
 
-
-
-  /**
-   * Asks the service to update the list of razas
-   */
   getRazas(): void {
-    this.razas = JSON.parse('[{ "id": "1212", "nombre": "sdfdsf"}]');
+    this.servicio.getMascotasVenta()
+    .subscribe( lista => this.razas = lista);
   }
 
   /**

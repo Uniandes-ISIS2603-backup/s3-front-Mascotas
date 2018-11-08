@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import {RazaServiceService} from '../raza-service.service';
+import {RazaService} from '../raza-service';
 import {Raza} from '../raza';
-import { RazaDetail } from '../razaDetail';
+import { RazaDetail } from '../raza-detail';
 
 @Component({
   selector: 'app-raza-detail',
@@ -12,10 +12,10 @@ import { RazaDetail } from '../razaDetail';
 export class RazaDetailComponent implements OnInit {
 
   razaId : number;
-  razaDetail : razaDetail;
+  razaDetail : RazaDetail;
 
   constructor(
-    private servicio: RazaServiceService,
+    private servicio: RazaService,
     private route: ActivatedRoute
   ) { }
 
@@ -28,7 +28,7 @@ export class RazaDetailComponent implements OnInit {
 
   ngOnInit() {
     this.razaId = +this.route.snapshot.paramMap.get('id');
-    this.razaDetail = new razaDetail();
+    this.razaDetail = new RazaDetail();
 
     this.getRazaDetail();
   }

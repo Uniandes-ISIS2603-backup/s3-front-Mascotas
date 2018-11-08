@@ -1,0 +1,37 @@
+<div class="container">
+  <nav aria-label="breadcrumb" style="margin-top: 20px;">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a routerLink="/compra/list">Compras</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Crear</li>
+    </ol>
+  </nav>
+  <h1>Crear una compra</h1>
+
+  <form name="especie" (ngSubmit)="f.form.valid && createCompra()" #f="ngForm" novalidate>
+    <div class="form-group">
+      <label for="mascotaId">Mascota</label>
+      <input type="text" name="mascotaId" class="form-control" id="mascotaId" placeholder="Mascota" [(ngModel)]="compra.mascotaId"
+             #mascotaId="ngModel" [ngClass]="{ 'is-invalid': f.submitted && mascotaId.invalid }" required>
+      <div class="invalid-feedback">
+        <div>La mascota es obligatorio</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="compraPrecio">Precio</label>
+      <input type="text" name="compraPrecio" class="form-control" id="compraPrecio" placeholder="Precio" [(ngModel)]="compra.precio"
+             #compraPrecio="ngModel" [ngClass]="{ 'is-invalid': f.submitted && compraPrecio.invalid }" required>
+      <div class="invalid-feedback">
+        <div>El precio es obligatorio</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="mascotaId">Tipo de Pago</label>
+      <input type="text" name="compraTipoDePago" class="form-control" id="compraTipoDePago" placeholder="Tipo de pago" [(ngModel)]="compra.tipoDePago"
+             #compraTipoDePago="ngModel" [ngClass]="{ 'is-invalid': f.submitted && compraTipoDePago.invalid }" required>
+      <div class="invalid-feedback">
+        <div>El tipo de pagos es obligatorio</div>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Crear</button>
+  </form>
+</div>

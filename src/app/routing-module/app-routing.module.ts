@@ -33,6 +33,8 @@ import {CompraListComponent} from '../compra/compra-list/compra-list.component';
 import {ClienteListComponent} from '../cliente/cliente-list/cliente-list.component';
 import {ClienteCreateComponent} from '../cliente/cliente-create/cliente-create.component';
 import {ClienteDetailComponent} from '../cliente/cliente-detail/cliente-detail.component';
+import {CompraCreateComponent} from '../compra/compra-create/compra-create.component';
+import {CompraDetailComponent} from '../compra/compra-detail/compra-detail.component';
 
 
 
@@ -68,11 +70,11 @@ const routes: Routes = [
       },
       {
         path: 'create',
-        component: EspecieCreateComponent
+        component: CompraCreateComponent
       },
       {
         path: ':id',
-        component: EspecieDetailComponent
+        component: CompraDetailComponent
       }
     ]
   },

@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { RazaServiceService } from './raza-service.service';
+import { RazaService } from './raza-service';
 
-describe('RazaServiceService', () => {
+describe('RazaService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: RazaServiceService = TestBed.get(RazaServiceService);
+    const service: RazaService = TestBed.get(RazaService);
     expect(service).toBeTruthy();
   });
 });

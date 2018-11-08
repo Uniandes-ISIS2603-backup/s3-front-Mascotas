@@ -2,22 +2,22 @@
 /**
  * Clase que representa la calificacion de una tienda
  */
-export class Calificacion{
+export class Calificacion {
 
 
     /**
      * Puntaje de una calificacion
      */
-    puntaje : number;
+    puntaje: number;
 
     /**
      * Comentarios de una compra como calificacion
      */
-    comentarios : string;
+    comentarios: string;
 
     /**
      * identificador de la calificacion
      */
-    id : number;
+    id: number;
 
 }

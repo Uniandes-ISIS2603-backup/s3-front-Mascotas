@@ -2,16 +2,14 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { environment} from '../../environments/environment'
-import { Raza} from'./raza';
-import { razaDetail } from './razaDetail';
-
-
+import { Raza} from './raza';
+import { RazaDetail } from './raza-detail';
 
 const API_URL = environment.apiURL;
 const razas = '/razas';
 
 @Injectable()
-export class RazaServiceService {
+export class RazaService {
   
    /**
      * Constructor of the service
@@ -27,9 +25,7 @@ export class RazaServiceService {
       return this.http.get<Raza[]>( "../../assets/raza.json" );
     }
 
-
-    getRazaDetail(razaId): Observable<razaDetail> {
-      return this.http.get<razaDetail>(API_URL + razas + '/' + razaId);
+    getRazaDetail(razaId): Observable<RazaDetail> {
+      return this.http.get<RazaDetail>(API_URL + razas + '/' + razaId);
     }
-  
-  }
+}
