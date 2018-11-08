@@ -1,0 +1,29 @@
+<div class="container">
+  <nav aria-label="breadcrumb" style="margin-top: 20px;">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item active" aria-current="page">Compras</li>
+    </ol>
+  </nav>
+  <h1>Compras</h1>
+  <p>
+    <a class="btn btn-success" routerLink="/compra/create">Comprar una mascota</a>
+  </p>
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">MascotaId</th>
+      <th scope="col">Precio</th>
+      <th scope="col">Tipo de Pago</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor = "let compra of compras">
+      <td style="cursor: pointer" routerLink="/compra/{{compra.mascotaId}}"><span>{{compra.mascotaId}}</span></td>
+      <td style="cursor: pointer">{{compra.mascotaId}}</td>
+      <td style="cursor: pointer">{{compra.precio}}</td>
+      <td style="cursor: pointer">{{compra.tipoDePago}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

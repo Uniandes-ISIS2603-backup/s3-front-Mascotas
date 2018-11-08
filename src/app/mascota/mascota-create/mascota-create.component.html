@@ -1,0 +1,61 @@
+<div class="container">
+  <nav aria-label="breadcrumb" style="margin-top: 20px;">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a routerLink="/mascota/list">Mascotas</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Crear</li>
+    </ol>
+  </nav>
+  <h1>Crear una mascota</h1>
+
+  <form name="especie" (ngSubmit)="f.form.valid && createMascota()" #f="ngForm" novalidate>
+    <div class="form-group">
+      <label for="mascotaNombre">Nombre de la Mascota</label>
+      <input type="text" name="mascotaNombre" class="form-control" id="mascotaNombre" placeholder="Nombre" [(ngModel)]="mascota.nombre"
+        #mascotaNombre="ngModel" [ngClass]="{ 'is-invalid': f.submitted && mascotaNombre.invalid }" required>
+      <div class="invalid-feedback">
+        <div>El nombre es obligatorio</div>
+      </div>
+      <label for="mascotaEdad">Edad</label>
+      <input type="text" name="mascotaEdad" class="form-control" id="mascotaEdad" placeholder="Edad" [(ngModel)]="mascota.edad"
+        #mascotaEdad="ngModel" [ngClass]="{ 'is-invalid': f.submitted && mascotaEdad.invalid }" required>
+      <div class="invalid-feedback">
+        <div>La edad es obligatorio</div>
+      </div>
+      <label for="mascotaGenero">Genero</label>
+      <input type="text" name="mascotaGenero" class="form-control" id="mascotaGenero" placeholder="Genero" [(ngModel)]="mascota.genero"
+        #mascotaGenero="ngModel" [ngClass]="{ 'is-invalid': f.submitted && mascotaGenero.invalid }" required>
+      <div class="invalid-feedback">
+        <div>El genero es obligatorio</div>
+      </div>
+      <label for="mascotaColor">Color </label>
+      <input type="text" name="mascotaColor" class="form-control" id="mascotaColor" placeholder="Color" [(ngModel)]="mascota.color"
+        #mascotaColor="ngModel" [ngClass]="{ 'is-invalid': f.submitted && mascotaColor.invalid }" required>
+      <div class="invalid-feedback">
+        <div>El color es obligatorio</div>
+      </div>
+      <label for="mascotaPrecio">Precio</label>
+      <input type="text" name="mascotaPrecio" class="form-control" id="mascotaPrecio" placeholder="Precio" [(ngModel)]="mascota.precio"
+        #mascotaPrecio="ngModel" [ngClass]="{ 'is-invalid': f.submitted && mascotaPrecio.invalid }" required>
+      <div class="invalid-feedback">
+        <div>El precio es obligatorio</div>
+      </div>
+      <label for="mascotaImagen">Imagen</label>
+      <input type="text" name="mascotaImagen" class="form-control" id="mascotaImagen" placeholder="Imagen" [(ngModel)]="mascota.imagen"
+        #mascotaImagen="ngModel" [ngClass]="{ 'is-invalid': f.submitted && mascotaImagen.invalid }" required>
+      <div class="invalid-feedback">
+        <div>La imagen es obligatoria</div>
+      </div>
+      <label for="mascotaRaza">Raza</label>
+      <input type="text" name="mascotaRaza" class="form-control" id="mascotaRaza" placeholder="Raza" [(ngModel)]="mascota.raza"
+        #mascotaRaza="ngModel" [ngClass]="{ 'is-invalid': f.submitted && mascotaRaza.invalid }" required>
+      <div class="invalid-feedback">
+        <div>La Raza es obligatoria</div>
+      </div>
+    </div>
+    <div class="row form-inline justify-content-center align-self-center">
+      <button type="submit" class="btn btn-primary">Create</button>
+      <div class="divider"></div>
+      <button type="button" class="btn btn-danger" (click)="cancelCreation()">Cancel</button>
+  </div>
+  </form>
+</div>

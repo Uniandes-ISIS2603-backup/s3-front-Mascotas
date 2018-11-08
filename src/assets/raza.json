@@ -1,11 +1,33 @@
 [
     {
-        "id": 1,
-        "nombre": "Labrador"
-    },
-    {
-        "id": 2,
-        "nombre": "Doberman"
-    }
- 
+    "id": 1,
+    "nombre": "Martes americana"
+  }, {
+    "id": 2,
+    "nombre": "Phoeniconaias minor"
+  }, {
+    "id": 3,
+    "nombre": "Phasianus colchicus"
+  }, {
+    "id": 4,
+    "nombre": "Leptoptilus dubius"
+  }, {
+    "id": 5,
+    "nombre": "Cacatua tenuirostris"
+  }, {
+    "id": 6,
+    "nombre": "unavailable"
+  }, {
+    "id": 7,
+    "nombre": "Chelodina longicollis"
+  }, {
+    "id": 8,
+    "nombre": "Streptopelia senegalensis"
+  }, {
+    "id": 9,
+    "nombre": "Turtur chalcospilos"
+  }, {
+    "id": 10,
+    "nombre": "Pterocles gutturalis"
+  }
 ]

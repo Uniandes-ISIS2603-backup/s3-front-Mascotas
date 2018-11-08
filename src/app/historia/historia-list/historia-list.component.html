@@ -1,0 +1,31 @@
+<div class="container">
+    <nav aria-label="breadcrumb" style="margin-top: 20px;">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item active" aria-current="page">Historias</li>
+      </ol>
+    </nav>
+    <h1>Historias</h1>
+    <p>
+      <a class="btn btn-success" routerLink="/historia/create">Crear una Historia</a>
+    </p>
+    <table class="table">
+    <thead>
+      <tr>
+        <th>Id</th>    
+        <th>Foto</th>  
+        <th>Texto</th>  
+    </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor = "let historia of historias">
+  
+         <!-- <td style="cursor: pointer" routerLink="/mascota/{{historia.id}}"><span>{{historia.id}}</span></td> -->
+         <td style="cursor: pointer">{{historia.id}}</td>
+          <td style="cursor: pointer">{{historia.foto}}</td>
+          <td style="cursor: pointer">{{historia.texto}}</td>
+      </tr>
+  </tbody>
+  </table>
+  </div>
+  
+ 

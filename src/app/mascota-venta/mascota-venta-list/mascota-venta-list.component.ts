@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { MascotaVentaService} from '../mascota-venta.service';
+import { MascotaVenta} from '../mascotaVenta';
 
 @Component({
   selector: 'app-mascota-venta-list',
@@ -7,9 +10,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MascotaVentaListComponent implements OnInit {
 
-  constructor() { }
+  constructor(private servicio : MascotaVentaService ,
+    private route : ActivatedRoute
+    ) {}
+
+  /**
+  * La lista de mascotas de venta.
+  */
+  mascotasVenta : MascotaVenta[];
+
+  getMascotas(): void{
+    this.servicio.getMascotasVenta()
+    .subscribe( lista => this.mascotasVenta=lista);
+  }
 
   ngOnInit() {
+    this.getMascotas();
   }
 
 }

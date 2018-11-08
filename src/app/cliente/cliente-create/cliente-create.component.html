@@ -1,0 +1,37 @@
+<div class="container">
+  <nav aria-label="breadcrumb" style="margin-top: 20px;">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a routerLink="/cliente/list">Clientes</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Crear</li>
+    </ol>
+  </nav>
+  <h1>Crear un cliente</h1>
+
+  <form name="cliente" (ngSubmit)="f.form.valid && createCliente()" #f="ngForm" novalidate>
+    <div class="form-group">
+      <label for="clienteCorreo">Correo del cliente</label>
+      <input type="text" name="clienteCorreo" class="form-control" id="clienteCorreo" placeholder="Correo" [(ngModel)]="cliente.correo"
+             #clienteCorreo="ngModel" [ngClass]="{ 'is-invalid': f.submitted && clienteCorreo.invalid }" required>
+      <div class="invalid-feedback">
+        <div>El correo es obligatorio</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="clienteDireccion">Dirección del cliente</label>
+      <input type="text" name="clienteDireccion" class="form-control" id="clienteDireccion" placeholder="Dirección" [(ngModel)]="cliente.direccion"
+             #clienteDireccion="ngModel" [ngClass]="{ 'is-invalid': f.submitted && clienteDireccion.invalid }" required>
+      <div class="invalid-feedback">
+        <div>La dirección es obligatoria</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="clienteTarjeta">Correo del cliente</label>
+      <input type="text" name="clienteTarjeta" class="form-control" id="clienteTarjeta" placeholder="Tarjeta" [(ngModel)]="cliente.tarjetaCreditoRegistrada"
+             #clienteTarjeta="ngModel" [ngClass]="{ 'is-invalid': f.submitted && clienteTarjeta.invalid }" required>
+      <div class="invalid-feedback">
+        <div>La tarjeta es obligatoria</div>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Crear</button>
+  </form>
+</div>

@@ -1,0 +1,29 @@
+<div class="container">
+  <nav aria-label="breadcrumb" style="margin-top: 20px;">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item active" aria-current="page">Clientes</li>
+    </ol>
+  </nav>
+  <h1>Clientes</h1>
+  <p>
+    <a class="btn btn-success" routerLink="/cliente/create">Crear un cliente</a>
+  </p>
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Correo</th>
+      <th scope="col">Dirección</th>
+      <th scope="col">Tarjeta de crédito registrada</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor = "let cliente of clientes">
+      <td style="cursor: pointer" routerLink="/cliente/{{cliente.id}}"><span>{{cliente.id}}</span></td>
+      <td style="cursor: pointer">{{cliente.correo}}</td>
+      <td style="cursor: pointer">{{cliente.direccion}}</td>
+      <td style="cursor: pointer">{{cliente.tarjetaCreditoRegistrada}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

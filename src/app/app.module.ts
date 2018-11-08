@@ -2,33 +2,46 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-
+import { AppRoutingModule} from './routing-module/app-routing.module';
 import { AppComponent } from './app.component';
-import { MascotaAdopcionModule} from './mascota-adopcion/mascota-adopcion.module';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
 import { MascotaVentaModule} from './mascota-venta/mascota-venta.module';
 import { MascotaModule} from './mascota/mascota.module';
 import { RazaModule} from './raza/raza.module';
-
-
-import {AppRoutingModule} from './routing-module/app-routing.module'
-
-
+import { HistoriaModule} from'./historia/historia.module';
+import { EspecieModule} from './especie/especie.module';
+import { CalificacionModule} from './calificacion/calificacion.module';
+import {CompraModule} from './compra/compra.module';
+import {ClienteModule} from './cliente/cliente.module';
 
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
-    MascotaAdopcionModule,
-    MascotaVentaModule,
-    RazaModule,
-    MascotaModule,
     FormsModule,
     HttpClientModule,
-    AppRoutingModule
+    ToastrModule.forRoot({
+      timeOut: 10000,
+      positionClass: 'toast-bottom-right',
+      preventDuplicates: true,
+    }),
+    BrowserAnimationsModule,
+    AppRoutingModule,
+    RazaModule,
+    MascotaVentaModule,
+    MascotaModule,
+    EspecieModule,
+    HistoriaModule,
+    CalificacionModule,
+    CompraModule,
+    ClienteModule
   ],
   providers: [],
   bootstrap: [AppComponent]

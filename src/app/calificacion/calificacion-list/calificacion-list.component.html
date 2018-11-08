@@ -1,0 +1,29 @@
+<div class="container">
+    <nav aria-label="breadcrumb" style="margin-top: 20px;">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item active" aria-current="page">Calificaciones</li>
+      </ol>
+    </nav>
+    <h1>Calificaciones</h1>
+    <p>
+      <a class="btn btn-success" routerLink="/calificacion/create">Crear una calificacion</a>
+    </p>
+    <table class="table">
+    <thead>
+      <tr>
+        <th>Id</th>    
+        <th>Puntaje</th>  
+        <th>Comentarios</th> 
+    </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor = "let calificacion of calificaciones">
+         <!-- <td style="cursor: pointer" routerLink="/mascotaVenta/{{mascota.id}}"><span>{{mascota.id}}</span></td> -->
+         <td style="cursor: pointer">{{calificacion.id}}</td>
+          <td style="cursor: pointer">{{calificacion.puntaje}}</td>
+          <td style="cursor: pointer">{{calificacion.comentarios}}</td>
+      </tr>
+  </tbody>
+  </table>
+  </div>
+  

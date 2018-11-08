@@ -1,0 +1,25 @@
+<div class="container">
+  <nav aria-label="breadcrumb" style="margin-top: 20px;">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item active" aria-current="page">Especies</li>
+    </ol>
+  </nav>
+  <h1>Especies</h1>
+  <p>
+    <a class="btn btn-success" routerLink="/especie/create">Crear una especie</a>
+  </p>
+  <table class="table">
+  <thead>
+  <tr>
+    <th scope="col">Id</th>
+    <th scope="col">Nombre</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor = "let especie of especies">
+    <td style="cursor: pointer" routerLink="/especie/{{especie.id}}"><span>{{especie.id}}</span></td>
+    <td style="cursor: pointer">{{especie.nombre}}</td>
+  </tr>
+  </tbody>
+</table>
+</div>

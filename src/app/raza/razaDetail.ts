@@ -1,11 +1,10 @@
-import { Raza } from "./raza";
-import { Mascota } from "../mascota/mascota";
+import {Raza} from'./raza';
+import {Mascota} from'../mascota/mascota';
 
-export class RazaDetail extends Raza {
+export class razaDetail extends Raza{
 
     /**
-     * Las mascotas de la raza.
+     * Mascotas de una Raza
      */
-
-     razas: Mascota[];
+    mascotas : Mascota[];
 }

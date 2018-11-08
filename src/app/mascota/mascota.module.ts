@@ -1,11 +1,27 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+
+import { BrowserModule } from '@angular/platform-browser';
+import { AppRoutingModule } from '../routing-module/app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+
 import { MascotaListComponent } from './mascota-list/mascota-list.component';
+import { MascotaCreateComponent } from './mascota-create/mascota-create.component';
+import { MascotaService } from './mascota.service';
+
+
 
 @NgModule({
   imports: [
-    CommonModule
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    CommonModule,
+    FormsModule,
   ],
-  declarations: [MascotaListComponent]
+  declarations: [MascotaListComponent, MascotaCreateComponent ],
+  providers: [ MascotaService ],
+  exports: [MascotaListComponent, MascotaCreateComponent]
 })
 export class MascotaModule { }
