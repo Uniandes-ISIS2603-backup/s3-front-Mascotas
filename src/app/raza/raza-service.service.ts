@@ -12,7 +12,6 @@ const razas = '/razas';
 
 @Injectable()
 export class RazaServiceService {
-
   
    /**
      * Constructor of the service
@@ -34,4 +33,3 @@ export class RazaServiceService {
     }
   
   }
- 
