@@ -7,7 +7,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
 import { MascotaListComponent } from './mascota-list/mascota-list.component';
-import { MascotaDetailComponent } from './mascota-detail/mascota-detail.component';
 import { MascotaCreateComponent } from './mascota-create/mascota-create.component';
 import { MascotaService } from './mascota.service';
 
@@ -21,8 +20,8 @@ import { MascotaService } from './mascota.service';
     CommonModule,
     FormsModule,
   ],
-  declarations: [MascotaListComponent, MascotaDetailComponent, MascotaCreateComponent ],
+  declarations: [MascotaListComponent, MascotaCreateComponent ],
   providers: [ MascotaService ],
-  exports: [MascotaListComponent, MascotaDetailComponent, MascotaCreateComponent]
+  exports: [MascotaListComponent, MascotaCreateComponent]
 })
 export class MascotaModule { }

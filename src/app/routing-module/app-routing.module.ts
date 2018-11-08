@@ -20,7 +20,6 @@ import {EspecieCreateComponent} from '../especie/especie-create/especie-create.c
 import {EspecieDetailComponent} from '../especie/especie-detail/especie-detail.component';
 
 //Mascota
-import {MascotaDetailComponent} from '../mascota/mascota-detail/mascota-detail.component';
 import {MascotaListComponent} from '../mascota/mascota-list/mascota-list.component';
 import {MascotaCreateComponent} from '../mascota/mascota-create/mascota-create.component';
 
@@ -140,10 +139,6 @@ const routes: Routes = [
             {
                 path : 'create',
                 component : MascotaCreateComponent
-            },
-            {
-                path: ':id',
-                component: MascotaDetailComponent
             }
         ]
     }, 
