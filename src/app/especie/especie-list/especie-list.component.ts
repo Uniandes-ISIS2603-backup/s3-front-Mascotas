@@ -11,8 +11,14 @@ export class EspecieListComponent implements OnInit {
 
   constructor(private especieService: EspecieService) { }
 
+  /**
+   * Lista de Especies
+   */
   especies: Especie[];
 
+  /**
+   * Obtiene la lista de todas las especies registradas en el sistema
+   */
   getEspecies(): void {
     this.especieService.getEspecies().subscribe(
       lista => this.especies = lista
@@ -20,7 +26,10 @@ export class EspecieListComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getEspecies();
+    /**
+     * Al iniciar el componente llama al metodo getEspecies()
+     */
+      this.getEspecies();
   }
 
 }

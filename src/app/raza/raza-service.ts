@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { environment} from '../../environments/environment'
 import { Raza} from './raza';
 import { RazaDetail } from './raza-detail';
+import {Especie} from '../especie/especie';
 
 const API_URL = environment.apiURL;
 const razas = '/razas';
@@ -18,14 +19,26 @@ export class RazaService {
     constructor(private http: HttpClient) {}
 
       /**
-     * Returns the Observable object containing the list of authors retrieved from the API
+     * Retorna todas las razas creadas en el sistema
      * @returns The list of authors in real time
      */
-    getMascotasVenta(): Observable<Raza[]> {
-      return this.http.get<Raza[]>( "../../assets/raza.json" );
+    getRazas(): Observable<Raza[]> {
+        return this.http.get<Raza[]>(API_URL + razas);
     }
 
-    getRazaDetail(razaId): Observable<RazaDetail> {
+  /**
+   * Retorna el detalle de una raza, dado su id
+   * @param razaId
+   */
+  getRazaDetail(razaId): Observable<RazaDetail> {
       return this.http.get<RazaDetail>(API_URL + razas + '/' + razaId);
     }
+
+  /**
+   * Crea una raza en el sistema(POST Request)
+   * @param raza
+   */
+  createRaza(raza): Observable<Raza> {
+    return this.http.post<Raza>(API_URL + razas, raza);
+  }
 }

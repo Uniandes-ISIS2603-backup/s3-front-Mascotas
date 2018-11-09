@@ -18,14 +18,17 @@ export class MascotaService {
   constructor(private http: HttpClient) { }
 
   /**
- * Returns the Observable object containing the list of authors retrieved from the API
+ * Retorna todas las mascotas registradas en el sistema
  * @returns The list of authors in real time
  */
   getMascotas(): Observable<Mascota[]> {
-    //return this.http.get<Mascota[]>( "../../assets/mascotas.json" );
     return this.http.get<Mascota[]>(API_URL + mascotas);
   }
 
+  /**
+   * Crea una mascota en el sistema
+   * @param mascota
+   */
   createMascota(mascota): Observable<Mascota> {
     return this.http.post<Mascota>(API_URL + mascotas, mascota);
   }

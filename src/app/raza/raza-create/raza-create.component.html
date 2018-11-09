@@ -1,3 +1,21 @@
-<p>
-  raza-create works!
-</p>
+<div class="container">
+  <nav aria-label="breadcrumb" style="margin-top: 20px;">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a routerLink="/raza/list">Razas</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Crear</li>
+    </ol>
+  </nav>
+  <h1>Crear una raza</h1>
+
+  <form name="raza" (ngSubmit)="f.form.valid && createRaza()" #f="ngForm" novalidate>
+    <div class="form-group">
+      <label for="razaNombre">Nombre de la Raza</label>
+      <input type="text" name="razaNombre" class="form-control" id="razaNombre" placeholder="Nombre" [(ngModel)]="raza.nombre"
+             #razaNombre="ngModel" [ngClass]="{ 'is-invalid': f.submitted && razaNombre.invalid }" required>
+      <div class="invalid-feedback">
+        <div>El nombre es obligatorio</div>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Crear</button>
+  </form>
+</div>

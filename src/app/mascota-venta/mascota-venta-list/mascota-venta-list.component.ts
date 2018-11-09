@@ -10,21 +10,25 @@ import { MascotaVenta} from '../mascotaVenta';
 })
 export class MascotaVentaListComponent implements OnInit {
 
-  constructor(private servicio : MascotaVentaService ,
-    private route : ActivatedRoute
-    ) {}
+  constructor(private servicio: MascotaVentaService) {}
 
   /**
   * La lista de mascotas de venta.
   */
-  mascotasVenta : MascotaVenta[];
+  mascotasVenta: MascotaVenta[];
 
-  getMascotas(): void{
+  /**
+   * Obtiene todas las mascotas disponibles para la venta
+   */
+  getMascotas(): void {
     this.servicio.getMascotasVenta()
-    .subscribe( lista => this.mascotasVenta=lista);
+    .subscribe( lista => this.mascotasVenta = lista);
   }
 
   ngOnInit() {
+    /**
+     * Al iniciar el componente llama al metodo getMascotas()
+     */
     this.getMascotas();
   }
 

@@ -13,16 +13,20 @@ export class CalificacionListComponent implements OnInit {
   constructor(private servicio: CalificacionService) {}
 
   /**
-  * La lista de mascotas de venta.
+  * La lista de calificaciones.
   */
   calificaciones: Calificacion[];
 
+  /**
+   * Obtiene todas las calificaciones
+   */
   getCalificaciones(): void {
     this.servicio.getCalificaciones().subscribe(
-      lista => this.calificaciones =lista);
+      lista => this.calificaciones = lista);
   }
 
   ngOnInit() {
+    // Ejecuta getCalificaciones al iniciar el componente
     this.getCalificaciones();
   }
 }

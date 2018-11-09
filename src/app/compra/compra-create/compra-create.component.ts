@@ -4,6 +4,8 @@ import {ToastrService} from 'ngx-toastr';
 import {Compra} from '../compra';
 import {Especie} from '../../especie/especie';
 
+
+
 @Component({
   selector: 'app-compra-create',
   templateUrl: './compra-create.component.html',
@@ -20,6 +22,9 @@ export class CompraCreateComponent implements OnInit {
 
   @Output() create = new EventEmitter;
 
+  /**
+   * Crea una compra y muestra un mensaje toast en la interfaz
+   */
   createCompra(): Compra {
 
     this.compraService.createCompra(this.compra)
@@ -33,6 +38,7 @@ export class CompraCreateComponent implements OnInit {
   }
 
   ngOnInit() {
+    // Inicializa compra al cargar el componente
     this.compra = new Compra();
   }
 

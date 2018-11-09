@@ -12,21 +12,25 @@ import { Historia} from '../historia';
 export class HistoriaListComponent implements OnInit {
 
 
-  constructor(private servicio : HistoriaService ,
-    private route : ActivatedRoute
-    ) {}
+  constructor(private servicio: HistoriaService) {}
 
  /**
-  * La lista de mascotas. 
+  * La lista de historia
   */
- historias : Historia[];
+ historias  : Historia[];
 
- getHistorias(): void{
+  /**
+   * Obtiene todas las historias registradas en el sistema
+   */
+ getHistorias(): void {
    this.servicio.getHistorias()
-   .subscribe( lista => this.historias=lista);
+   .subscribe( lista => this.historias = lista);
  }
 
  ngOnInit() {
+   /**
+    * Al iniciar el componente llama al metodo getHistorias()
+    */
    this.getHistorias();
  }
 

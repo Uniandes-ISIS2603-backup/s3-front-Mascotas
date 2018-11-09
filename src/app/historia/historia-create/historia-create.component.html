@@ -1,3 +1,29 @@
-<p>
-  historia-create works!
-</p>
+<div class="container">
+  <nav aria-label="breadcrumb" style="margin-top: 20px;">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a routerLink="/historias/list">Historias</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Crear</li>
+    </ol>
+  </nav>
+  <h1>Crear un historia</h1>
+
+  <form name="historia" (ngSubmit)="f.form.valid && createHistoria()" #f="ngForm" novalidate>
+    <div class="form-group">
+      <label for="historiaFoto">Foto</label>
+      <input type="text" name="historiaFoto" class="form-control" id="historiaFoto" placeholder="Foto" [(ngModel)]="historia.foto"
+             #historiaFoto="ngModel" [ngClass]="{ 'is-invalid': f.submitted && historiaFoto.invalid }" required>
+      <div class="invalid-feedback">
+        <div>La foto es obligatoria</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="historiaTexto">Texto</label>
+      <input type="text" name="historiaTexto" class="form-control" id="historiaTexto" placeholder="Texto" [(ngModel)]="historia.texto"
+             #historiaTexto="ngModel" [ngClass]="{ 'is-invalid': f.submitted && historiaTexto.invalid }" required>
+      <div class="invalid-feedback">
+        <div>El texto es obligatorio</div>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Crear</button>
+  </form>
+</div>

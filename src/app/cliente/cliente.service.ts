@@ -13,14 +13,25 @@ export class ClienteService {
 
   constructor(private http: HttpClient) { }
 
+  /**
+   * Obtiene todos los clientes del endpoint
+   */
   getClientes(): Observable<Cliente[]> {
     return this.http.get<Cliente[]>(API_URL + clientes);
   }
 
+  /**
+   * Obtiene la informacion de un un cliente dado su id
+   * @param clienteId
+   */
   getClienteDetail(clienteId): Observable<ClienteDetail> {
     return this.http.get<ClienteDetail>(API_URL + clientes + '/' + clienteId);
   }
 
+  /**
+   * Crea un cliente en el endpoint definido
+   * @param cliente
+   */
   createCliente(cliente): Observable<Cliente> {
     return this.http.post<Cliente>(API_URL + clientes, cliente);
   }

@@ -16,7 +16,7 @@ export class MascotaVenta {
      */
     documentosPedegree: string;
 
-    /*
+    /**
      * Representa el precio de la mascota a la venta
      */
     precio: number;

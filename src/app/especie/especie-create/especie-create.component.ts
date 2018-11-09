@@ -19,6 +19,9 @@ export class EspecieCreateComponent implements OnInit {
 
   @Output() create = new EventEmitter();
 
+  /**
+   * Creacion de una especie. Cuando ha sido creada se visualiza un toast
+   */
   createEspecie(): Especie {
     console.log(this.especie);
 
@@ -32,6 +35,9 @@ export class EspecieCreateComponent implements OnInit {
   }
 
   ngOnInit() {
+    /**
+     * Instancia una Especie en la variable especie al iniciar el componente
+     */
     this.especie = new Especie();
   }
 

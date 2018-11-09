@@ -1,8 +1,8 @@
 /**
- * Clase que representa una mascota de adopcion
+ * Clase que representa la especie de una mascota
  */
 
- export class Especie{
+ export class Especie {
 
     /**
      * Representa el identificador de la especie.

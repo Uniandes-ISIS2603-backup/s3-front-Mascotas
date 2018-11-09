@@ -13,6 +13,9 @@ export class CompraListComponent implements OnInit {
 
   compras: Compra[];
 
+  /**
+   * Obtiene todas las compras en el sistema
+   */
   getCompras(): void {
     this.comprasService.getCompras().subscribe(
         lista => this.compras = lista
@@ -20,6 +23,7 @@ export class CompraListComponent implements OnInit {
   }
 
   ngOnInit() {
+    // Al cargar el componente carga todas las compras
     this.getCompras();
   }
 }

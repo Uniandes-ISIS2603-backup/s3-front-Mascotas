@@ -1,18 +1,21 @@
 /**
- * Clase que representa una mascota de adopcion
+ * Clase que representa la compra de una mascota
  */
 
  export class Compra{
 
     /**
-     * Representa el identificador de la especie.
+     * Representa el identificador de la compra.
      */
     mascotaId: number;
 
     /**
-     * Represetna el nombre de la especie.
+     * Representa el precio con el que se compro una mascota.
      */
     precio: number;
 
-    tipoDePago: string;
+  /**
+   * Representa el tipo de pago con el que se compro una mascota
+   */
+  tipoDePago: string;
  }

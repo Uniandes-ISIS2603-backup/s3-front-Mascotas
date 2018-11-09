@@ -19,12 +19,15 @@ export class CalificacionCreateComponent implements OnInit {
 
   @Output() create = new EventEmitter();
 
+  /**
+   * Crea una calificacion y muestra en la interfaz un toast con el mensaje de success
+   */
   createCalificacion(): Calificacion {
     this.calificacionService.createCalificacion(this.calificacion)
       .subscribe((calificacion) => {
           this.calificacion = calificacion;
           this.create.emit();
-          this.toastrService.success('La calificacion sa sido creada', 'Creacion Calificacion');
+          this.toastrService.success('La calificacion ha sido creada', 'Creacion Calificacion');
       });
 
     return this.calificacion;

@@ -15,14 +15,25 @@ export class EspecieService {
 
   constructor(private http: HttpClient) {}
 
+  /**
+   * Obtiene todas las especies registradas en el sistema
+   */
   getEspecies(): Observable<Especie[]> {
     return this.http.get<Especie[]>(API_URL + especies);
   }
 
+  /**
+   * Obtiene el detalle de una especie dado su id por GET
+   * @param especieId
+   */
   getEspecieDetail(especieId): Observable<EspecieDetail> {
     return this.http.get<EspecieDetail>(API_URL + especies + '/' + especieId);
   }
 
+  /**
+   * Crea una especie en el sistema(POST Request)
+   * @param especie
+   */
   createEspecie(especie): Observable<Especie> {
     return this.http.post<Especie>(API_URL + especies, especie);
   }

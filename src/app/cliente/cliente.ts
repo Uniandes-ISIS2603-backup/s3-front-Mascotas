@@ -5,16 +5,22 @@
  export class Cliente {
 
     /**
-     * Representa el identificador de la especie.
+     * Representa el identificador del cliente.
      */
     id: number;
 
     /**
-     * Represetna el nombre de la especie.
+     * Representa el correo del cliente.
      */
     correo: string;
 
-    direccion: string;
+  /**
+   * Representa la direccion del cliente
+   */
+  direccion: string;
 
+  /**
+   * Representa la tarjeta de credito del cliente
+   */
     tarjetaCreditoRegistrada: string;
  }

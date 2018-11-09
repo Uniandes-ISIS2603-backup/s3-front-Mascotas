@@ -18,6 +18,9 @@ export class ClienteDetailComponent implements OnInit {
       private route: ActivatedRoute
   ) { }
 
+  /**
+   * Obtiene el detalle de un cliente dado suid
+   */
   getClienteDetail(): void {
     this.clienteService.getClienteDetail(this.clienteId)
       .subscribe(clienteDetail => {
@@ -26,6 +29,7 @@ export class ClienteDetailComponent implements OnInit {
   }
 
   ngOnInit() {
+    // Al iniciar el componente mapea el id enviado por get y ejecuta getClienteDetail
     this.clienteId = +this.route.snapshot.paramMap.get('id');
     this.clienteDetail = new ClienteDetail();
     this.getClienteDetail();

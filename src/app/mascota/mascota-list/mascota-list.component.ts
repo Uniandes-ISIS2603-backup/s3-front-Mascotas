@@ -17,6 +17,9 @@ export class MascotaListComponent implements OnInit {
   */
   mascotas: Mascota[];
 
+  /**
+   * Retorna todas las mascotas en el sistema
+   */
   getMascotas(): void {
     this.mascotaService.getMascotas().subscribe(
       lista => this.mascotas = lista
@@ -24,6 +27,9 @@ export class MascotaListComponent implements OnInit {
   }
 
   ngOnInit() {
+    /**
+     * Al iniciar el componente llama el metodo getMascotas()
+     */
     this.getMascotas();
   }
 

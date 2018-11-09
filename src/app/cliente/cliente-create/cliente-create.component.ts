@@ -19,6 +19,9 @@ export class ClienteCreateComponent implements OnInit {
 
   @Output() create = new EventEmitter();
 
+  /**
+   * Crea un cliente y muestra un mensaje toast
+   */
   createCliente(): Cliente {
     this.clienteService.createCliente(this.cliente)
       .subscribe((cliente) => {
@@ -30,6 +33,7 @@ export class ClienteCreateComponent implements OnInit {
   }
 
   ngOnInit() {
+    //Inicializa cliente como un nuevo objeto
     this.cliente = new Cliente();
   }
 

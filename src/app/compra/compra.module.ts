@@ -16,6 +16,6 @@ import { CompraDetailComponent } from './compra-detail/compra-detail.component';
   ],
   providers: [CompraService],
   declarations: [CompraListComponent, CompraCreateComponent, CompraDetailComponent],
-  exports: [CompraListComponent]
+  exports: [CompraListComponent, CompraCreateComponent]
 })
 export class CompraModule { }

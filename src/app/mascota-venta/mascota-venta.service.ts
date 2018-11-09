@@ -20,11 +20,10 @@ export class MascotaVentaService {
     constructor(private http: HttpClient) {}
 
       /**
-     * Returns the Observable object containing the list of authors retrieved from the API
-     * @returns The list of authors in real time
+     * Retorna todas las mascotas disponibles para la venta
+     * @returns Lista de mascotas para la venta
      */
     getMascotasVenta(): Observable<MascotaVenta[]> {
-      //return this.http.get<MascotaVenta[]>( "../../assets/mascotaVenta.json" );
       return this.http.get<MascotaVenta[]>( API_URL + mascotas );
 
   }

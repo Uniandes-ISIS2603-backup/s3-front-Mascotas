@@ -18,6 +18,9 @@ export class EspecieDetailComponent implements OnInit {
     private route: ActivatedRoute
   ) { }
 
+  /**
+   * Obtiene el detalle de una especie dado su id
+   */
   getEspecieDetail(): void {
     this.especieService.getEspecieDetail(this.especieId)
       .subscribe(especieDetail => {
@@ -26,6 +29,9 @@ export class EspecieDetailComponent implements OnInit {
   }
 
   ngOnInit() {
+    /**
+     * Captura el parametro 'id' enviado como parametro por GET y obtiene el detalle de la especie al iniciar el componenteg
+     */
     this.especieId = +this.route.snapshot.paramMap.get('id');
     this.especieDetail = new EspecieDetail();
     this.getEspecieDetail();

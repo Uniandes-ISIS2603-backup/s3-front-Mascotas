@@ -19,8 +19,11 @@ constructor(private servicio: RazaService ,
    */
   razas: Raza[];
 
+  /**
+   * Retorna todas las razas
+   */
   getRazas(): void {
-    this.servicio.getMascotasVenta()
+    this.servicio.getRazas()
     .subscribe( lista => this.razas = lista);
   }
 
