@@ -1,27 +1,62 @@
 [
     {
-        "id": 1,
-        "nombre": "Icker",
-        "edad" : 8,
-        "genero" : "Macho",
-        "color" : "Negro",
-        "precio" : 200000,
+        "color": "Dorado",
+        "edad": 1,
+        "genero": "F",
+        "id": 2,
+        "imagen": "https://mascotafiel.com/wp-content/uploads/2015/11/perros-cocker-spaniel_opt-compressor-1.jpg",
+        "nombre": "Tony",
+        "precio": 500000,
         "raza" : {
-            "id" : 12 ,
-            "nombre" : "Husky Siberiano"
+        	"id" : "1"
         }
     },
-    {
+        {
+        "color": "Dorado",
+        "edad": 1,
+        "genero": "F",
         "id": 2,
+        "imagen": "https://http2.mlstatic.com/cachorros-lobos-siberiano-D_NQ_NP_850531-MCO26917221354_022018-O.jpg",
         "nombre": "Megan",
-        "edad" : 6,
-        "genero" : "Hembra",
-        "color" : "Dorado",
-        "precio" : 400000,
+        "precio": 300000,
         "raza" : {
-            "id" : 13 ,
-            "nombre" : "Labrador"
+        	"id" : "2"
+        }
+    },
+        {
+        "color": "Dorado",
+        "edad": 1,
+        "genero": "F",
+        "id": 2,
+        "imagen": "http://perros.mascotahogar.com/Imagenes/cachorro-de-doberman.jpg",
+        "nombre": "Spark",
+        "precio": 100000,
+        "raza" : {
+        	"id" : "3"
+        }
+    },
+        {
+        "color": "Dorado",
+        "edad": 1,
+        "genero": "F",
+        "id": 2,
+        "imagen": "https://i.ytimg.com/vi/VIwgDTdPvk4/hqdefault.jpg",
+        "nombre": "Mustang",
+        "precio": 600000,
+        "raza" : {
+        	"id" : "4"
+        }
+    },
+        {
+        "color": "Dorado",
+        "edad": 1,
+        "genero": "F",
+        "id": 2,
+        "imagen": "https://t2.ea.ltmcdn.com/es/images/9/3/0/la_alimentacion_de_un_rottweiler_cachorro_22039_0_600.jpg",
+        "nombre": "Zeus",
+        "precio": 900000,
+        "raza" : {
+        	"id" : "5"
         }
     }
-    
 ]

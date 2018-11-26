@@ -7,6 +7,7 @@ import { Mascota } from './mascota';
 
 const API_URL = environment.apiURL;
 const mascotas = '/mascotas';
+const temporal = '../../assets/mascotas.json';
 
 @Injectable()
 export class MascotaService {
@@ -22,7 +23,7 @@ export class MascotaService {
  * @returns The list of authors in real time
  */
   getMascotas(): Observable<Mascota[]> {
-    return this.http.get<Mascota[]>(API_URL + mascotas);
+    return this.http.get<Mascota[]>(temporal);
   }
 
   /**
