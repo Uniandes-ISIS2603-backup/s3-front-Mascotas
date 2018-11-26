@@ -1,15 +1,16 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule} from './routing-module/app-routing.module';
 import { AppComponent } from './app.component';
-import { ToastrModule } from 'ngx-toastr';
+import { ToastrModule} from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {NgxPermissionsModule} from 'ngx-permissions';
+import { NgxPermissionsModule} from 'ngx-permissions';
+import {HttpErrorInterceptor} from './interceptors/httperrorinterceptor.service';
+import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
+import { ModalDialogModule } from 'ngx-modal-dialog';
 
 
-import { MascotaVentaModule} from './mascota-venta/mascota-venta.module';
 import { MascotaModule} from './mascota/mascota.module';
 import { RazaModule} from './raza/raza.module';
 import { HistoriaModule} from'./historia/historia.module';
@@ -30,14 +31,14 @@ import { AuthModule } from './auth/auth.module';
     FormsModule,
     HttpClientModule,
     ToastrModule.forRoot({
-      timeOut: 10000,
+      timeOut: 3000,
       positionClass: 'toast-bottom-right',
       preventDuplicates: true,
-    }),
+  }),
     BrowserAnimationsModule,
     AppRoutingModule,
+    ModalDialogModule.forRoot(),
     RazaModule,
-    MascotaVentaModule,
     MascotaModule,
     EspecieModule,
     HistoriaModule,
@@ -47,7 +48,13 @@ import { AuthModule } from './auth/auth.module';
     NgxPermissionsModule.forRoot(),
     AuthModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  providers: [
+    {
+        provide: HTTP_INTERCEPTORS,
+        useClass: HttpErrorInterceptor,
+        multi: true
+    }
+]
 })
 export class AppModule { }

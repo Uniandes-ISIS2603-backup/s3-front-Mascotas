@@ -3,11 +3,6 @@ import {CommonModule} from '@angular/common';
 import {RouterModule, Routes} from '@angular/router';
 import {NgxPermissionsGuard} from 'ngx-permissions';
 
-//MascotaVenta
-import {MascotaVentaListComponent} from '../mascota-venta/mascota-venta-list/mascota-venta-list.component';
-import {MascotaVentaDetailComponent} from '../mascota-venta/mascota-venta-detail/mascota-venta-detail.component';
-import {MascotaVentaCreateComponent} from '../mascota-venta/mascota-venta-create/mascota-venta-create.component';
-
 
 //Raza
 import {RazaDetailComponent} from '../raza/raza-detail/raza-detail.component';
@@ -99,23 +94,6 @@ const routes: Routes = [
                 path: ':id',
                 component: ClienteDetailComponent
             }
-        ]
-    },
-    {
-        path: 'mascotaVenta',
-        children: [
-            {
-                path: 'list',
-                component: MascotaVentaListComponent
-            },
-            {
-                path: 'create',
-                component: MascotaVentaCreateComponent
-            },
-            {
-                path: ':id',
-                component: MascotaVentaDetailComponent
-            },
         ]
     },
     {
