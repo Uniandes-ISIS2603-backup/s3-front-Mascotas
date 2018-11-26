@@ -6,6 +6,7 @@ import { AppRoutingModule} from './routing-module/app-routing.module';
 import { AppComponent } from './app.component';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {NgxPermissionsModule} from 'ngx-permissions';
 
 
 import { MascotaVentaModule} from './mascota-venta/mascota-venta.module';
@@ -16,6 +17,7 @@ import { EspecieModule} from './especie/especie.module';
 import { CalificacionModule} from './calificacion/calificacion.module';
 import {CompraModule} from './compra/compra.module';
 import {ClienteModule} from './cliente/cliente.module';
+import { AuthModule } from './auth/auth.module';
 
 
 
@@ -41,7 +43,9 @@ import {ClienteModule} from './cliente/cliente.module';
     HistoriaModule,
     CalificacionModule,
     CompraModule,
-    ClienteModule
+    ClienteModule,
+    NgxPermissionsModule.forRoot(),
+    AuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]

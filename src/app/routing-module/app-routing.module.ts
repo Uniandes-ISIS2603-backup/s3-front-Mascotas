@@ -1,6 +1,7 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {RouterModule, Routes} from '@angular/router';
+import {NgxPermissionsGuard} from 'ngx-permissions';
 
 //MascotaVenta
 import {MascotaVentaListComponent} from '../mascota-venta/mascota-venta-list/mascota-venta-list.component';
@@ -35,6 +36,11 @@ import {ClienteCreateComponent} from '../cliente/cliente-create/cliente-create.c
 import {ClienteDetailComponent} from '../cliente/cliente-detail/cliente-detail.component';
 import {CompraCreateComponent} from '../compra/compra-create/compra-create.component';
 import {CompraDetailComponent} from '../compra/compra-detail/compra-detail.component';
+
+
+import { LoginComponent } from '../auth/login/login.component';
+import { SignUpComponent } from '../auth/sign-up/sign-up.component';
+
 
 
 
@@ -174,6 +180,39 @@ const routes: Routes = [
                 component: CalificacionCreateComponent
             }
         ]
+    },
+    {
+        path: 'auth',
+        children: [
+            {
+                path: 'login',
+                component: LoginComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['GUEST']
+                    }
+                }
+            },
+            {
+                path: ':sign-up',
+                component: SignUpComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['GUEST']
+                    }
+                }
+            }
+        ]
+    },
+    {
+        path: 'home',
+        component: MascotaListComponent
+    },
+    {
+        path: '**',
+        redirectTo: 'home',
     }
 ];
 
