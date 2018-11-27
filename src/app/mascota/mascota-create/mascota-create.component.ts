@@ -1,7 +1,9 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import {ToastrService} from 'ngx-toastr';
-import {MascotaService} from '../mascota.service';
-import {Mascota} from '../mascota';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
+import { MascotaService } from '../mascota.service';
+import { Mascota } from '../mascota';
+import { RazaDetail } from 'src/app/raza/raza-detail';
+import { RazaService } from 'src/app/raza/raza-service';
 
 
 @Component({
@@ -18,24 +20,31 @@ export class MascotaCreateComponent implements OnInit {
    */
   constructor(
     private mascotaService: MascotaService,
-    private toastrService: ToastrService
+    private toastrService: ToastrService,
+    private razaService: RazaService
   ) { }
 
   /**
    * La nueva mascota
    */
   mascota: Mascota;
-  
-   /**
-    * The output which tells the parent component
-    * that the user no longer wants to create a pet
-    */
-   @Output() cancel = new EventEmitter();
 
-     /**
-    * The output which tells the parent component
-    * that the user created a new pet
-    */
+
+  /**
+   * Las razas existentes
+   */
+  razas: RazaDetail[];
+
+  /**
+   * The output which tells the parent component
+   * that the user no longer wants to create a pet
+   */
+  @Output() cancel = new EventEmitter();
+
+  /**
+ * The output which tells the parent component
+ * that the user created a new pet
+ */
   @Output() create = new EventEmitter();
 
 
@@ -59,15 +68,29 @@ export class MascotaCreateComponent implements OnInit {
     * Emits the signal to tell the parent component that the
     * user no longer wants to create an user
     */
-   cancelCreation(): void {
+  cancelCreation(): void {
     this.cancel.emit();
-}
+  }
 
-/**
- * This function will initialite the component.
- */
+
+
+  /**
+   * Todas las razas existentes en tiempo real.
+   */
+  getRazas(): void {
+    this.razaService.getRazas().subscribe(razas => {
+      this.razas = razas;
+    }, err => {
+      this.toastrService.error(err, 'Error');
+    });
+  }
+
+  /**
+   * This function will initialite the component.
+   */
   ngOnInit() {
     this.mascota = new Mascota();
+    this.getRazas();
   }
 
 }

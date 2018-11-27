@@ -20,10 +20,12 @@ export class RazaService {
 
       /**
      * Retorna todas las razas creadas en el sistema
-     * @returns The list of authors in real time
+     * @returns The list of razas in real time
      */
-    getRazas(): Observable<Raza[]> {
-        return this.http.get<Raza[]>(API_URL + razas);
+    getRazas(): Observable<RazaDetail[]> {
+      //return this.http.get<RazaDetail[]>(API_URL + razas);
+
+        return this.http.get<RazaDetail[]>('../../assets/razas.json');
     }
 
   /**

@@ -45,11 +45,16 @@
       <div class="invalid-feedback">
         <div>La imagen es obligatoria</div>
       </div>
-      <label for="mascotaRaza">Raza</label>
-      <input type="text" name="mascotaRaza" class="form-control" id="mascotaRaza" placeholder="Raza" [(ngModel)]="mascota.raza"
-        #mascotaRaza="ngModel" [ngClass]="{ 'is-invalid': f.submitted && mascotaRaza.invalid }" required>
-      <div class="invalid-feedback">
-        <div>La Raza es obligatoria</div>
+      <div class="form-group">
+          <label for="mascotaRaza"><b>Raza</b></label>
+          <select class="custom-select" name="mascotaRaza" id="mascotaRaza" [(ngModel)]="mascota.raza.id" 
+              #mascotaRaza="ngModel" [ngClass]="{ 'is-invalid': f.submitted && mascotaRaza.invalid }"
+              required>
+              <option [value]="raza.id" *ngFor="let raza of razas" >{{raza.nombre}}</option>
+          </select>
+          <div class="invalid-feedback">
+              <div>Debe seleccionar una raza</div>
+          </div>
       </div>
     </div>
     <div class="row form-inline justify-content-center align-self-center">

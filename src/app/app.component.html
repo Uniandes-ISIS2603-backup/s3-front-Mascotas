@@ -16,7 +16,7 @@
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">Mascotas</a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" class="nav-item nav-link" routerLink="/mascota/list" >Nuestras Mascotas</a>
+                        <a class="dropdown-item" class="nav-item nav-link" routerLink="[/mascota/list]" >Nuestras Mascotas</a>
                         <div class="dropdown-divider" *ngxPermissionsOnly="['ADMIN']"></div>
                         <a class="dropdown-item" class="nav-item nav-link" routerLink="/mascota/create" *ngxPermissionsOnly="['ADMIN']">Crear Mascota</a>
                     </div>
@@ -27,7 +27,7 @@
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" class="nav-item nav-link" routerLink="/raza/list" >Nuestras Razas</a>
                         <div class="dropdown-divider" *ngxPermissionsOnly="['ADMIN']"></div>
-                        <a class="dropdown-item" class="nav-item nav-link" routerLink="/mascota/create" *ngxPermissionsOnly="['ADMIN']">Crear Raza</a>
+                        <a class="dropdown-item" class="nav-item nav-link" routerLink="/raza/create" *ngxPermissionsOnly="['ADMIN']">Crear Raza</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown">

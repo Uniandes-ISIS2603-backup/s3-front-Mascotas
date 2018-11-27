@@ -2,8 +2,8 @@
  * clase que representa una mascota en la tienda.
  */
 
-
 import {Raza} from'../raza/raza';
+
 export class Mascota{
 
     /**
@@ -45,5 +45,10 @@ export class Mascota{
      * Representa la imagen de la mascota.
      */
     imagen : string;
+
+
+    constructor(){
+        this.raza= new Raza();
+    }
 
 }

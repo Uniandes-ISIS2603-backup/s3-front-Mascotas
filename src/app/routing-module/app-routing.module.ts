@@ -54,7 +54,12 @@ const routes: Routes = [
             },
             {
                 path: 'create',
-                component: EspecieCreateComponent
+                component: EspecieCreateComponent,
+                data: {
+                    permissions: {
+                        only: ['ADMIN']
+                    }
+                }
             },
             {
                 path: ':id',
