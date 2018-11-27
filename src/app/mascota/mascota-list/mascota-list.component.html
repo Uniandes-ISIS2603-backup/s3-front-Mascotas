@@ -35,6 +35,8 @@
 </table>
 </div>
 -->
+
+<!---
 <div class="container-fluid">
   <div class="row mt-3 offset-2" >
         <div class=" card mr-3 mt-3 ml-3 mb-3 col-3 text-center " *ngFor="let mascota of mascotas">
@@ -54,4 +56,32 @@
       </div>
     </div>
 </div>
+-->
 
+<div class="container">
+
+
+
+  <div class="row">
+
+    <div class="col-lg-3 col-xs-6" *ngFor="let mascota of mascotas">
+
+      <div class="card mb-3"  style="cursor: pointer;">
+
+        <img class="card-img-top img-responsive p-3" src="{{mascota.imagen}}">
+
+        <div class="card-body">
+
+          <h4 class="card-title">{{mascota.nombre}}</h4>
+
+          <p><b>{{mascota.edad}}</b></p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

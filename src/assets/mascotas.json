@@ -4,7 +4,7 @@
         "edad": 1,
         "genero": "F",
         "id": 2,
-        "imagen": "https://mascotafiel.com/wp-content/uploads/2015/11/perros-cocker-spaniel_opt-compressor-1.jpg",
+        "imagen": "https://http2.mlstatic.com/cocker-spaniel-doraditos-para-ti-D_NQ_NP_929076-MCO26557295011_122017-F.jpg",
         "nombre": "Tony",
         "precio": 500000,
         "raza" : {
@@ -12,11 +12,11 @@
         }
     },
         {
-        "color": "Dorado",
+        "color": "Blanco Negro",
         "edad": 1,
         "genero": "F",
         "id": 2,
-        "imagen": "https://http2.mlstatic.com/cachorros-lobos-siberiano-D_NQ_NP_850531-MCO26917221354_022018-O.jpg",
+        "imagen": "https://imgredirect.milanuncios.com/fg/2659/27/husky/Husky-Siberiano-265927918_1.jpg?VersionId=RmbFrmcRlrZ6TOb_fQ23oeGThoI_rfAs",
         "nombre": "Megan",
         "precio": 300000,
         "raza" : {
@@ -24,7 +24,7 @@
         }
     },
         {
-        "color": "Dorado",
+        "color": "Negro",
         "edad": 1,
         "genero": "F",
         "id": 2,
@@ -36,7 +36,7 @@
         }
     },
         {
-        "color": "Dorado",
+        "color": "Blanco",
         "edad": 1,
         "genero": "F",
         "id": 2,
@@ -48,7 +48,7 @@
         }
     },
         {
-        "color": "Dorado",
+        "color": "Negro",
         "edad": 1,
         "genero": "F",
         "id": 2,
