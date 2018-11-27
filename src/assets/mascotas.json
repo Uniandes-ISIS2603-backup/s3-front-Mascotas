@@ -2,7 +2,7 @@
     {
         "color": "Dorado",
         "edad": 1,
-        "genero": "F",
+        "genero": "Hembra",
         "id": 2,
         "imagen": "https://http2.mlstatic.com/cocker-spaniel-doraditos-para-ti-D_NQ_NP_929076-MCO26557295011_122017-F.jpg",
         "nombre": "Tony",
@@ -14,7 +14,7 @@
         {
         "color": "Blanco Negro",
         "edad": 1,
-        "genero": "F",
+        "genero": "Hembra",
         "id": 2,
         "imagen": "https://imgredirect.milanuncios.com/fg/2659/27/husky/Husky-Siberiano-265927918_1.jpg?VersionId=RmbFrmcRlrZ6TOb_fQ23oeGThoI_rfAs",
         "nombre": "Megan",
@@ -26,7 +26,7 @@
         {
         "color": "Negro",
         "edad": 1,
-        "genero": "F",
+        "genero": "Macho",
         "id": 2,
         "imagen": "http://perros.mascotahogar.com/Imagenes/cachorro-de-doberman.jpg",
         "nombre": "Spark",
@@ -38,7 +38,7 @@
         {
         "color": "Blanco",
         "edad": 1,
-        "genero": "F",
+        "genero": "Macho",
         "id": 2,
         "imagen": "https://i.ytimg.com/vi/VIwgDTdPvk4/hqdefault.jpg",
         "nombre": "Mustang",
@@ -50,10 +50,46 @@
         {
         "color": "Negro",
         "edad": 1,
-        "genero": "F",
+        "genero": "Macho",
         "id": 2,
         "imagen": "https://t2.ea.ltmcdn.com/es/images/9/3/0/la_alimentacion_de_un_rottweiler_cachorro_22039_0_600.jpg",
         "nombre": "Zeus",
+        "precio": 900000,
+        "raza" : {
+        	"id" : "5"
+        }
+    },
+    {
+        "color": "Negro",
+        "edad": 1,
+        "genero": "Hembra",
+        "id": 2,
+        "imagen": "https://i.pinimg.com/originals/17/6a/4c/176a4c1279f98133dacf4ceba36b188d.jpg",
+        "nombre": "Peggi",
+        "precio": 900000,
+        "raza" : {
+        	"id" : "5"
+        }
+    },
+    {
+        "color": "Negro",
+        "edad": 1,
+        "genero": "Hembra",
+        "id": 2,
+        "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMy0MPpzk718bK4zjRpBzZ_0a4QNO0-bK30M8rkHJgzMUcgJ52Lg",
+        "nombre": "Natasha",
+        "precio": 900000,
+        "raza" : {
+        	"id" : "5"
+        }
+    },
+    {
+        "color": "Negro",
+        "edad": 1,
+        "genero": "Macho",
+        "id": 2,
+        "imagen": "https://http2.mlstatic.com/cachorros-rottweiler-aceptamos-tarjetas-D_NQ_NP_941135-MLA26015056102_092017-F.jpg",
+        "nombre": "Potter",
         "precio": 900000,
         "raza" : {
         	"id" : "5"

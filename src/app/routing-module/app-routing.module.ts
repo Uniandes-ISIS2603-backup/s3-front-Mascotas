@@ -121,10 +121,17 @@ const routes: Routes = [
             {
                 path: 'list',
                 component: MascotaListComponent
-            } ,
+            },
             {
                 path : 'create',
-                component : MascotaCreateComponent
+                component : MascotaCreateComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN']
+                    }
+                }
+
             }
         ]
     }, 

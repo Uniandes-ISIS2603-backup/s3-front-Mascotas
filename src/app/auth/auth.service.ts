@@ -32,6 +32,7 @@ export class AuthService {
         } else {
             this.setClientRole();
         }
+        this.printRole();
     }
 
     setGuestRole (): void {
@@ -65,7 +66,7 @@ export class AuthService {
         } else {
             this.setClientRole()
         }
-        this.router.navigateByUrl('/especie/list');
+        this.router.navigateByUrl('/mascota/list');
     }
 
     /**
