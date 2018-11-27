@@ -13,4 +13,13 @@
      * Represetna el nombre de la especie.
      */
     nombre: string ;
+
+    /**
+     * Represetna la imagen de la especie.
+     */
+    imagen : string;
+
+
+
+
  }

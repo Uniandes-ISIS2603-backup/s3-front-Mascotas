@@ -23,6 +23,7 @@ export class MascotaService {
  * @returns The list of authors in real time
  */
   getMascotas(): Observable<Mascota[]> {
+    //return this.http.get<Mascota[]>(API_URL + mascotas);
     return this.http.get<Mascota[]>(temporal);
   }
 

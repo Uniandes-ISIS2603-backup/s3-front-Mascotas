@@ -4,7 +4,6 @@ import { HttpClient } from '@angular/common/http';
 import { environment} from '../../environments/environment'
 import { Raza} from './raza';
 import { RazaDetail } from './raza-detail';
-import {Especie} from '../especie/especie';
 
 const API_URL = environment.apiURL;
 const razas = '/razas';
@@ -24,7 +23,6 @@ export class RazaService {
      */
     getRazas(): Observable<RazaDetail[]> {
       //return this.http.get<RazaDetail[]>(API_URL + razas);
-
         return this.http.get<RazaDetail[]>('../../assets/razas.json');
     }
 

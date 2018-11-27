@@ -1,4 +1,5 @@
 <div class="container">
+<div class="col-5 offset-3">
   <nav aria-label="breadcrumb" style="margin-top: 20px;">
     <ol class="breadcrumb">
       <li class="breadcrumb-item"><a routerLink="/especie/list">Especies</a></li>
@@ -16,6 +17,19 @@
         <div>El nombre es obligatorio</div>
       </div>
     </div>
-    <button type="submit" class="btn btn-primary">Crear</button>
+    <div class="form-group">
+      <label for="especieImagen">Imagen</label>
+      <input type="text" name="especieImagen" class="form-control" id="especieImagen" placeholder="Nombre" [(ngModel)]="especie.imagen"
+      #especieImagen="ngModel" [ngClass]="{ 'is-invalid': f.submitted && especieImagen.invalid }" required>
+      <div class="invalid-feedback">
+        <div>La imagen es obligatoria</div>
+      </div>
+    </div>
+    <div class="row form-inline justify-content-center align-self-center">
+      <button type="submit" class="btn btn-primary mr-4">Crear</button>
+      <div class="divider"></div>
+          <button type="button" class="btn btn-danger"  routerLink="/especie/list">Cancel</button>
+    </div>
   </form>
+</div>
 </div>
