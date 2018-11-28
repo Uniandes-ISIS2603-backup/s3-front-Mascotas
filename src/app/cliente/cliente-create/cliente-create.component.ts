@@ -33,7 +33,7 @@ export class ClienteCreateComponent implements OnInit {
   }
 
   ngOnInit() {
-    //Inicializa cliente como un nuevo objeto
+    // Inicializa cliente como un nuevo objeto
     this.cliente = new Cliente();
   }
 

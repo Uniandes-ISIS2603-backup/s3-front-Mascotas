@@ -1,13 +1,14 @@
 <div class="container">
-  <nav aria-label="breadcrumb" style="margin-top: 20px;">
-    <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a routerLink="/cliente/list">Clientes</a></li>
-      <li class="breadcrumb-item active" aria-current="page">Crear</li>
-    </ol>
-  </nav>
-  <h1>Crear un cliente</h1>
+  <div class="col-5 offset-3">
+    <nav aria-label="breadcrumb" style="margin-top: 20px;">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a routerLink="/cliente/list">Clientes</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Crear</li>
+      </ol>
+    </nav>
+    <h1>Crear un cliente</h1>
 
-  <form name="cliente" (ngSubmit)="f.form.valid && createCliente()" #f="ngForm" novalidate>
+    <form name="cliente" (ngSubmit)="f.form.valid && createCliente()" #f="ngForm" novalidate>
     <div class="form-group">
       <label for="clienteCorreo">Correo del cliente</label>
       <input type="text" name="clienteCorreo" class="form-control" id="clienteCorreo" placeholder="Correo" [(ngModel)]="cliente.correo"
@@ -32,6 +33,11 @@
         <div>La tarjeta es obligatoria</div>
       </div>
     </div>
-    <button type="submit" class="btn btn-primary">Crear</button>
+    <div class="row form-inline justify-content-center align-self-center">
+      <button type="submit" class="btn btn-success mr-4">Crear</button>
+      <div class="divider"></div>
+      <button type="button" class="btn btn-danger"  routerLink="/cliente/list">Volver</button>
+    </div>
   </form>
+  </div>
 </div>
