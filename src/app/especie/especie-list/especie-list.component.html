@@ -1,6 +1,6 @@
 <div class="container-fluid">
     <div class="row offset-1">
-        <div class="col-4">
+        <div class="col-3">
             <div class="row justify-content-center align-self-center" *ngxPermissionsOnly="['ADMIN']">
                 <button [ngClass]="{ 'btn-primary': !showCreate, 'btn-danger': showCreate }" type="button" class="btn mt-4"
                     (click)="showHideCreate()">Crear una Especie</button>
@@ -33,7 +33,7 @@
                 </tbody>
             </table>
         </div>
-        <div class="col-8">
+        <div class="col-9">
             <div *ngIf="showView">
                 <app-especie-detail [especieDetail]="selectedEspecie"></app-especie-detail>
             </div>
