@@ -1,0 +1,12 @@
+{
+    "color": "Dorado",
+    "edad": 1,
+    "genero": "Hembra",
+    "id": 1,
+    "imagen": "https://http2.mlstatic.com/cocker-spaniel-doraditos-para-ti-D_NQ_NP_929076-MCO26557295011_122017-F.jpg",
+    "nombre": "Tony",
+    "precio": 500000,
+    "raza" : {
+        "id" : "1"
+    }
+}

@@ -12,6 +12,7 @@ import {EspecieService} from './especie.service';
 import { EspecieCreateComponent } from './especie-create/especie-create.component';
 import {AppRoutingModule} from '../routing-module/app-routing.module';
 import { EspecieDetailComponent } from './especie-detail/especie-detail.component';
+import { EspecieEditComponent } from './especie-edit/especie-edit.component';
 
 
 @NgModule({
@@ -25,7 +26,7 @@ import { EspecieDetailComponent } from './especie-detail/especie-detail.componen
     RazaModule
   ],
   providers: [EspecieService],
-  declarations: [ EspecieListComponent, EspecieCreateComponent, EspecieDetailComponent],
+  declarations: [ EspecieListComponent, EspecieCreateComponent, EspecieDetailComponent, EspecieEditComponent],
   exports: [EspecieListComponent, EspecieCreateComponent, EspecieDetailComponent]
 })
 export class EspecieModule { }

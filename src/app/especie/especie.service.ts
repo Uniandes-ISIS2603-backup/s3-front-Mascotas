@@ -29,7 +29,6 @@ export class EspecieService {
    */
   getEspecieDetail(especieId): Observable<EspecieDetail> {
    // return this.http.get<EspecieDetail>(API_URL + especies + '/' + especieId);
-   console.log(this.http.get<EspecieDetail>('../../assets/especies' +especieId + '.json')) ;
    return this.http.get<EspecieDetail>('../../assets/especies' +especieId + '.json');
 
   }
@@ -41,4 +40,23 @@ export class EspecieService {
   createEspecie(especie): Observable<Especie> {
     return this.http.post<Especie>(API_URL + especies, especie);
   }
+  
+    /**
+    * Updates an especie
+    * @param author The author's information updated
+    * @returns The confirmation that the author was updated
+    */
+   updateESpecie(especie): Observable<EspecieDetail> {
+    return this.http.put<EspecieDetail>(API_URL + especies + '/' + especie.id, especie);
+}
+
+
+/**
+ * Elimina una especie
+ */
+deleteEspecie(especieId) : Observable<boolean>{
+  return this.http.delete<boolean>(API_URL + especies + '/' + especieId);
+}
+
+
 }
