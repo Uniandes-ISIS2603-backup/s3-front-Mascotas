@@ -1,0 +1,34 @@
+
+	{
+		"id" :"1",
+		"nombre" : "Perros",
+		"imagen" : "https://album.mediaset.es/eimg/2018/04/29/Jb9AaahTpSUcw0YS2mQIA2.jpg?w=1024",
+		"razas":
+		[ 
+           {
+         	"id" : "1",
+        	"nombre" : "Cocker Spaniel" ,
+	        "imagen" : "https://www.curiosfera.com/wp-content/uploads/2018/03/cocker-spaniel-ingl%C3%A9s-caracter%C3%ADsticas.jpg"
+           },
+           {
+         	"id" : "2",
+        	"nombre" : "Lobo Siberiano" ,
+	        "imagen" : "https://upload.wikimedia.org/wikipedia/commons/c/ca/Siberian-husky.jpg"
+           },   
+           {
+         	"id" : "3",
+            "nombre" : "Doberman" ,
+         	"imagen" : "https://www.curiosfera.com/wp-content/uploads/2018/03/doberman-car%C3%A1cter.jpg" 
+           },
+           {
+         	"id" : "4",
+        	"nombre" : "BullTerrier" ,
+        	"imagen" : "http://bullterrierminiatura-lcossta.com/wp-content/uploads/2017/11/estandar-raza-bull-terrier-miniatura-1.jpg"
+           },
+           {
+            "id" : "5",
+        	"nombre" : "RottWeiler" ,
+          	"imagen" : "https://www.curiosfera.com/wp-content/uploads/2018/03/Rottweiler.jpg" 
+           }
+        ]
+    }

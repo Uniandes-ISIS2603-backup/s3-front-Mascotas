@@ -1,6 +1,10 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {BrowserModule} from '@angular/platform-browser';
+import {HttpClientModule} from '@angular/common/http';
+import {FormsModule} from '@angular/forms';
+import {NgxPermissionsModule} from 'ngx-permissions';
+
 
 import { EspecieListComponent } from './especie-list/especie-list.component';
 import {EspecieService} from './especie.service';
@@ -12,7 +16,10 @@ import { EspecieDetailComponent } from './especie-detail/especie-detail.componen
   imports: [
     CommonModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    NgxPermissionsModule,
+    HttpClientModule,
+    BrowserModule
   ],
   providers: [EspecieService],
   declarations: [EspecieListComponent, EspecieCreateComponent, EspecieDetailComponent],

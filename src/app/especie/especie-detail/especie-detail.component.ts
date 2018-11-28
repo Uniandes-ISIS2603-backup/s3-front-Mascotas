@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import {EspecieService} from '../especie.service';
-import {ActivatedRoute} from '@angular/router';
-import {EspecieDetail} from '../especie-detail';
+import { Component, OnInit, Input } from '@angular/core';
+import { EspecieService } from '../especie.service';
+import { ActivatedRoute } from '@angular/router';
+import { EspecieDetail } from '../especie-detail';
 
 @Component({
   selector: 'app-especie-detail',
@@ -10,8 +10,17 @@ import {EspecieDetail} from '../especie-detail';
 })
 export class EspecieDetailComponent implements OnInit {
 
+
+  /**
+  * El id del author que viene en el path get .../especies/especie_id
+  */
   especieId: number;
-  especieDetail: EspecieDetail;
+
+  /**
+    * La especie.
+    */
+  @Input() especieDetail: EspecieDetail;
+
 
   constructor(
     private especieService: EspecieService,
@@ -26,6 +35,8 @@ export class EspecieDetailComponent implements OnInit {
       .subscribe(especieDetail => {
         this.especieDetail = especieDetail;
       });
+      console.log("sdsds");
+      console.log(this.especieDetail);
   }
 
   ngOnInit() {
@@ -33,7 +44,10 @@ export class EspecieDetailComponent implements OnInit {
      * Captura el parametro 'id' enviado como parametro por GET y obtiene el detalle de la especie al iniciar el componenteg
      */
     this.especieId = +this.route.snapshot.paramMap.get('id');
-    this.especieDetail = new EspecieDetail();
-    this.getEspecieDetail();
+    if (this.especieId) {
+      this.especieDetail = new EspecieDetail();
+      this.getEspecieDetail();
+    }
+    console.log(this.especieDetail.nombre);
   }
 }

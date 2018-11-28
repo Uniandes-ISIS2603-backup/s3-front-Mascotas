@@ -28,7 +28,10 @@ export class EspecieService {
    * @param especieId
    */
   getEspecieDetail(especieId): Observable<EspecieDetail> {
-    return this.http.get<EspecieDetail>(API_URL + especies + '/' + especieId);
+   // return this.http.get<EspecieDetail>(API_URL + especies + '/' + especieId);
+   console.log(this.http.get<EspecieDetail>('../../assets/especies' +especieId + '.json')) ;
+   return this.http.get<EspecieDetail>('../../assets/especies' +especieId + '.json');
+
   }
 
   /**

@@ -1,0 +1,21 @@
+[
+    {
+       "id" : "1",
+       "nombre" : "Cocker Spaniel" ,
+       "imagen" : "https://www.curiosfera.com/wp-content/uploads/2018/03/cocker-spaniel-ingl%C3%A9s-caracter%C3%ADsticas.jpg",
+       "especie" : {
+           "id":"1"
+       },
+       "mascotas"  : [
+       {
+       "color": "Dorado",
+           "edad": 1,
+           "genero": "F",
+           "id": 2,
+           "imagen": "https://mascotafiel.com/wp-content/uploads/2015/11/perros-cocker-spaniel_opt-compressor-1.jpg",
+           "nombre": "Tony",
+           "precio": 500000
+       }
+       ]
+    }
+]

@@ -1,22 +1,49 @@
-<div class="container">
-  <nav aria-label="breadcrumb" style="margin-top: 20px;">
-    <ol class="breadcrumb">
-      <li class="breadcrumb-item active" aria-current="page">Especies</li>
-    </ol>
-  </nav>
-  <h1>Especies</h1>
-  <table class="table">
-  <thead>
-  <tr>
-    <th scope="col">Id</th>
-    <th scope="col">Nombre</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr *ngFor = "let especie of especies">
-    <td style="cursor: pointer" routerLink="/especie/{{especie.id}}"><span>{{especie.id}}</span></td>
-    <td style="cursor: pointer">{{especie.nombre}}</td>
-  </tr>
-  </tbody>
-</table>
+<div class="container-fluid">
+    <div class="row offset-1">
+        <div class="col-4">
+            <div class="row justify-content-center align-self-center" *ngxPermissionsOnly="['ADMIN']">
+                <button [ngClass]="{ 'btn-primary': !showCreate, 'btn-danger': showCreate }" type="button" class="btn mt-4"
+                    (click)="showHideCreate()">Crear una Especie</button>
+            </div>
+            <br>
+            <br>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th class="h4">Nuestras Especies</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let especie of especies">
+                        <div class="card mb-3" style="cursor: pointer;" (click)="onSelected(especie.id)">
+                            <img class="card-img-top img-responsive p-3" src="{{especie.imagen}}">
+                            <div class="card-body">
+                                <h4 class="card-title text-center">{{especie.nombre}}</h4>
+                                <div class="row form-inline justify-content-center align-self-center ">
+                                    <div *ngxPermissionsOnly="['ADMIN']">
+                                        <button class="btn btn-primary mr-3" (click)="showHideEdit(especie.id)"><span class="fa fa-pencil"></span>Editar</button>
+                                    </div>
+                                    <div *ngxPermissionsOnly="['ADMIN']">
+                                        <button class="btn btn-danger" (click)="deleteEspecie(especie.id)"><span class="fa fa-trash"></span>Eliminar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-8">
+            <div *ngIf="showView">
+                <app-especie-detail [especieDetail]="selectedEspecie"></app-especie-detail>
+            </div>
+            <div *ngIf="showCreate">
+                <app-especie-create (cancel)="showHideCreate()" (create)="ngOnInit()"></app-especie-create>
+            </div>
+            <div *ngIf="showEdit">
+                <app-especie-create (cancel)="showHideEdit(selectedEspecie.id)"></app-especie-create>
+            </div>
+        </div>
+    </div>
 </div>
+-->

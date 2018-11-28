@@ -4,7 +4,6 @@ import { ToastrService } from 'ngx-toastr';
 import { Raza } from '../raza';
 import { EspecieDetail } from 'src/app/especie/especie-detail';
 import { EspecieService } from 'src/app/especie/especie.service';
-import { error } from '@angular/compiler/src/util';
 
 @Component({
   selector: 'app-raza-create',
@@ -35,11 +34,7 @@ export class RazaCreateComponent implements OnInit {
   especies: EspecieDetail[];
 
 
-    /**
-   * The output which tells the parent component
-   * that the user no longer wants to create a pet
-   */
-  @Output() cancel = new EventEmitter();
+  
 
   /**
  * The output which tells the parent component
@@ -48,7 +43,6 @@ export class RazaCreateComponent implements OnInit {
   @Output() create = new EventEmitter();
 
 
-  creado : boolean = false;
 
 
 
@@ -75,19 +69,14 @@ export class RazaCreateComponent implements OnInit {
     })
   }
 
-   /**
-    * Emits the signal to tell the parent component that the
-    * user no longer wants to create an user
-    */
-   cancelCreation(): void {
-    this.cancel.emit();
-  }
 
-  ngOnInit() {
-    /**
+
+   /**
      * Instancia una Raza en la variable especie al iniciar el componente
      */
+  ngOnInit() {
     this.raza = new Raza();
     this.getEspecies();
   }
 }
+ 

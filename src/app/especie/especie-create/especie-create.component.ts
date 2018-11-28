@@ -1,7 +1,7 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import {EspecieService} from '../especie.service';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { EspecieService } from '../especie.service';
 import { ToastrService } from 'ngx-toastr';
-import {Especie} from '../especie';
+import { Especie } from '../especie';
 
 @Component({
   selector: 'app-especie-create',
@@ -11,13 +11,29 @@ import {Especie} from '../especie';
 export class EspecieCreateComponent implements OnInit {
 
   constructor(
-      private especieService: EspecieService,
-      private toastrService: ToastrService
+    private especieService: EspecieService,
+    private toastrService: ToastrService
   ) { }
 
   especie: Especie;
 
   @Output() create = new EventEmitter();
+
+  /**
+   * The output which tells the parent component
+   * that the user no longer wants to create an author
+   */
+  @Output() cancel = new EventEmitter();
+
+
+
+  /**
+  * Emits the signal to tell the parent component that the
+  * user no longer wants to create an user
+  */
+  cancelCreation(): void {
+    this.cancel.emit();
+  }
 
   /**
    * Creacion de una especie. Cuando ha sido creada se visualiza un toast
@@ -31,7 +47,7 @@ export class EspecieCreateComponent implements OnInit {
         this.create.emit();
         this.toastrService.success('La especie ha sido creada', 'Creacion Especie');
       });
-      return this.especie;
+    return this.especie;
   }
 
   ngOnInit() {

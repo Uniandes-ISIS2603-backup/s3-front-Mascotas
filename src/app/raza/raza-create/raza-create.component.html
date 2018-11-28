@@ -1,45 +1,47 @@
-<div class="container" >
-  <div class="col-5 offset-3" >
+<div class="container">
+  <div class="col-5 offset-3">
     <nav aria-label="breadcrumb" style="margin-top: 20px;">
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a routerLink="/raza/list">Razas</a></li>
         <li class="breadcrumb-item active" aria-current="page">Crear</li>
       </ol>
-    </nav>
-    <h1>Crear una raza</h1>
+    </nav> 
+    <h1>Crear una Raza</h1>
   
-    <form name="raza" (ngSubmit)="f.form.valid && createRaza() " #f="ngForm" novalidate>
+    <form name="raza" (ngSubmit)="f.form.valid && createRaza()" #f="ngForm" novalidate>
       <div class="form-group">
-        <label for="razaNombre">Nombre de la Raza</label>
+        <label for="razaNombre">Nombre</label>
         <input type="text" name="razaNombre" class="form-control" id="razaNombre" placeholder="Nombre" [(ngModel)]="raza.nombre"
-          #razaNombre="ngModel" [ngClass]="{ 'is-invalid': f.submitted && razaNombre.invalid }" required>
+        #razaNombre="ngModel" [ngClass]="{ 'is-invalid': f.submitted && razaNombre.invalid }" required>
         <div class="invalid-feedback">
           <div>El nombre es obligatorio</div>
         </div>
-      </div> 
+      </div>
       <div class="form-group">
         <label for="razaImagen">Imagen</label>
         <input type="text" name="razaImagen" class="form-control" id="razaImagen" placeholder="Nombre" [(ngModel)]="raza.imagen"
-          #razaImagen="ngModel" [ngClass]="{ 'is-invalid': f.submitted && razaImagen.invalid }" required>
+        #razaImagen="ngModel" [ngClass]="{ 'is-invalid': f.submitted && razaImagen.invalid }" required>
         <div class="invalid-feedback">
           <div>La imagen es obligatoria</div>
         </div>
       </div>
       <div class="form-group">
         <label for="razaEspecie"><b>Especie</b></label>
-        <select class="custom-select" name="razaEspecie" id="razaEspecie" [(ngModel)]="raza.especie.id" #razaEspecie="ngModel"
-          [ngClass]="{ 'is-invalid': f.submitted && razaEspecie.invalid }" required>
-          <option [value]="especie.id" *ngFor="let especie of especies">{{especie.nombre}}</option>
+        <select class="custom-select" name="razaEspecie" id="razaEspecie" [(ngModel)]="raza.especie.id" 
+            #razaEspecie="ngModel" [ngClass]="{ 'is-invalid': f.submitted && razaEspecie.invalid }"
+            required>
+            <option [value]="especie.id" *ngFor="let especie of especies" >{{especie.nombre}}</option>
         </select>
         <div class="invalid-feedback">
-          <div>Debe seleccionar una especie.</div>
+            <div>Debe seleccionar una Especie</div>
         </div>
-      </div>
+    </div>
       <div class="row form-inline justify-content-center align-self-center">
-        <button type="submit" class="btn btn-primary mr-4">Create</button>
+        <button type="submit" class="btn btn-primary mr-4">Crear</button>
         <div class="divider"></div>
-        <button type="button" class="btn btn-danger" routerLink="/raza/list">Cancel</button>
+            <button type="button" class="btn btn-danger"  routerLink="/especie/list">Cancel</button>
       </div>
     </form>
   </div>
-</div>
+  </div>
+  
