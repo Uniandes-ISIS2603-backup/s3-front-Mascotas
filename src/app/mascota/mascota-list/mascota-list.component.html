@@ -1,13 +1,12 @@
-
 <div class="container">
 
   <div class="row">
 
     <div class="col-lg-3 col-xs-6" *ngFor="let mascota of mascotas">
 
-      <div class="card mb-3" style="cursor: pointer;">
+      <div class="card mb-3" >
 
-        <img class="card-img-top img-responsive p-3" src="{{mascota.imagen}}">
+        <img class="card-img-top img-responsive p-3" src="{{mascota.imagen}}" >
 
         <div class="card-body">
 
@@ -25,14 +24,27 @@
 
             <p class="card-text">Precio : {{mascota.precio}}</p>
 
+            <div class="row form-inline justify-content-center align-self-center ">
+              <div *ngxPermissionsOnly="['ADMIN']">
+                <button class="btn btn-primary mr-3"  style="cursor: pointer;" (click)="showHideEdit(mascota.id)" > <span class="fa fa-pencil"></span>Editar</button>
+              </div>
+              <div *ngxPermissionsOnly="['ADMIN']">
+                <button class="btn btn-danger" ><span class="fa fa-trash"></span>Eliminar</button>
+              </div>
+            </div>
+
           </div>
 
         </div>
-        
+
       </div>
 
     </div>
-    
+    <div class="col-9">
+        <div *ngIf="showEdit">
+            <app-mascota-edit (cancel)="showHideEdit(selectedEspecie.id)" [mascota]="selectedMascota"></app-mascota-edit>
+        </div>
+    </div>
   </div>
 
 </div>

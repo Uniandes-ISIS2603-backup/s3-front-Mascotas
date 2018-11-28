@@ -15,8 +15,8 @@
                 </thead>
                 <tbody>
                     <tr *ngFor="let especie of especies">
-                        <div class="card mb-3" style="cursor: pointer;" (click)="onSelected(especie.id)">
-                            <img class="card-img-top img-responsive p-3" src="{{especie.imagen}}">
+                        <div class="card mb-3" >
+                            <img class="card-img-top img-responsive p-3" src="{{especie.imagen}}" style="cursor: pointer;" (click)="onSelected(especie.id)">
                             <div class="card-body">
                                 <h4 class="card-title text-center">{{especie.nombre}}</h4>
                                 <div class="row form-inline justify-content-center align-self-center ">
@@ -38,10 +38,10 @@
                 <app-especie-detail [especieDetail]="selectedEspecie"></app-especie-detail>
             </div>
             <div *ngIf="showCreate">
-                <app-especie-create (cancel)="showHideCreate()" (create)="ngOnInit()"></app-especie-create>
+                <app-especie-create  (cancel)="showHideCreate()" (create)="ngOnInit()"></app-especie-create>
             </div>
             <div *ngIf="showEdit">
-                <app-especie-create (cancel)="showHideEdit(selectedEspecie.id)"></app-especie-create>
+                <app-especie-edit (cancel)="showHideEdit(selectedEspecie.id)" [especie]="selectedEspecie"></app-especie-edit>
             </div>
         </div>
     </div>

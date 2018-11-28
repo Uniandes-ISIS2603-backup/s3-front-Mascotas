@@ -27,11 +27,29 @@ export class MascotaService {
     return this.http.get<Mascota[]>(temporal);
   }
 
+
   /**
    * Crea una mascota en el sistema
    * @param mascota
    */
   createMascota(mascota): Observable<Mascota> {
     return this.http.post<Mascota>(API_URL + mascotas, mascota);
+  }
+
+
+  /**
+  * la mascota que se desea encontrar
+ */
+  getMascota(mascotaId): Observable<Mascota> {
+    //return this.http.get<Mascota>(API_URL + mascotas + '/' + mascotaId);
+    return this.http.get<Mascota>('../../assets/mascotas1.json');
+
+  }
+
+  /**
+   * Edita la mascota que se desea.
+   */
+  editarMascota(mascota) : Observable<Mascota> {
+    return this.http.put<Mascota> (API_URL + mascotas + '/' + mascota.id, mascota);
   }
 }

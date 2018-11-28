@@ -2,6 +2,8 @@ import { Component, OnInit, ViewContainerRef } from '@angular/core';
 import { ToastrService } from 'ngx-toastr'; import { EspecieService } from '../especie.service';
 import { Especie } from '../especie';
 import { EspecieDetail } from '../especie-detail';
+import {ModalDialogService, SimpleModalComponent} from 'ngx-modal-dialog';
+
 
 @Component({
   selector: 'app-especie-list',
@@ -13,6 +15,7 @@ export class EspecieListComponent implements OnInit {
   constructor(
     private especieService: EspecieService,
     private viewRef: ViewContainerRef,
+    private modalDialogService: ModalDialogService,
     private toastrService: ToastrService
   ) { }
 
@@ -58,16 +61,15 @@ export class EspecieListComponent implements OnInit {
 
 
   /**
-  * Shows the author
+  * Shows the especie
   */
   onSelected(especie_id: number): void {
     this.showCreate = false;
-    this.showEdit = false;
+    this.showEdit = this.showEdit;
     this.showView = !this.showView;
     this.especie_id = especie_id;
     this.selectedEspecie = new EspecieDetail();
     this.getEspecieDetail();
-    console.log(this.selectedEspecie.nombre);
   }
 
   /**
@@ -105,6 +107,33 @@ export class EspecieListComponent implements OnInit {
     this.showCreate = !this.showCreate;
   }
 
+
+  /**
+    * Elimina una especie. 
+    */
+   deleteEspecie(especieId): void {
+    this.modalDialogService.openDialog(this.viewRef, {
+        title: 'Eliminar una especie',
+        childComponent: SimpleModalComponent,
+        data: {text: '¿Está seguro que desea eliminar esta especie de la tienda PetsUniandes?'},
+        actionButtons: [
+            {
+                text: 'Yes',
+                buttonClass: 'btn btn-danger',
+                onAction: () => {
+                    this.especieService.deleteEspecie(especieId).subscribe(() => {
+                        this.toastrService.error("La especie fue eliminada exitosamente", "Especie eliminada");
+                        this.ngOnInit();
+                    }, err => {
+                        this.toastrService.error(err, "Error");
+                    });
+                    return true;
+                }
+            },
+            {text: 'No', onAction: () => true}
+        ]
+    });
+}
 
   /**
        * Al iniciar el componente llama al metodo getEspecies()
