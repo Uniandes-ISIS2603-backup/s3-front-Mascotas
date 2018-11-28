@@ -6,27 +6,6 @@
       </ol>
     </nav>  
     <h2>Mascotas de Raza {{razaDetail.nombre}}</h2>
-    <table class="table">
-        <thead>
-          <tr>
-            <th>Id</th>    
-            <th>Nombre</th>  
-            <th>Edad</th>  
-            <th>Genero</th>  
-            <th>Color</th>  
-            <th>Precio</th>  
-        </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor = "let mascota of razaDetail.mascota">
-              <td style="cursor: pointer">{{mascota.id}}</td>
-              <td style="cursor: pointer">{{mascota.nombre}}</td>
-              <td style="cursor: pointer">{{mascota.edad}}</td>
-              <td style="cursor: pointer">{{mascota.genero}}</td>
-              <td style="cursor: pointer">{{mascota.color}}</td>
-              <td style="cursor: pointer">{{mascota.precio}}</td>
-          </tr>
-      </tbody>
-      </table>
+    <app-mascota-list [mascotas]="razaDetail.mascotas" [allMascotas]="false"></app-mascota-list>
   </div>
   

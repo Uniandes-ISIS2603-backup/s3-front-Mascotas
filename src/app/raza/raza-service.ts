@@ -31,7 +31,8 @@ export class RazaService {
    * @param razaId
    */
   getRazaDetail(razaId): Observable<RazaDetail> {
-      return this.http.get<RazaDetail>(API_URL + razas + '/' + razaId);
+      //return this.http.get<RazaDetail>(API_URL + razas + '/' + razaId);
+      return this.http.get<RazaDetail>( '../../assets/razas' + razaId +'.json' );
     }
 
   /**

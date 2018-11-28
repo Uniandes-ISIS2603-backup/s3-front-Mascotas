@@ -6,6 +6,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from '../routing-module/app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { MascotaModule} from '../mascota/mascota.module';
 
 import { RazaListComponent } from './raza-list/raza-list.component';
 import { RazaDetailComponent } from './raza-detail/raza-detail.component';
@@ -18,7 +19,8 @@ import { RazaService } from './raza-service';
     AppRoutingModule,
     HttpClientModule,
     CommonModule,
-    FormsModule
+    FormsModule,
+    MascotaModule
   ],
   declarations: [ RazaListComponent, RazaDetailComponent, RazaCreateComponent],
   providers : [ RazaService] ,

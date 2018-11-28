@@ -9,6 +9,8 @@ import { NgxPermissionsModule} from 'ngx-permissions';
 import {HttpErrorInterceptor} from './interceptors/httperrorinterceptor.service';
 import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { ModalDialogModule } from 'ngx-modal-dialog';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+
 
 
 import { MascotaModule} from './mascota/mascota.module';
@@ -46,7 +48,8 @@ import { AuthModule } from './auth/auth.module';
     CompraModule,
     ClienteModule,
     NgxPermissionsModule.forRoot(),
-    AuthModule
+    AuthModule,
+    NgbModule
   ],
   bootstrap: [AppComponent],
   providers: [

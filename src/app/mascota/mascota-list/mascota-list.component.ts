@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { MascotaService} from '../mascota.service';
-import { Mascota} from '../mascota';
+import { MascotaService } from '../mascota.service';
+import { Mascota } from '../mascota';
 
 @Component({
   selector: 'app-mascota-list',
@@ -10,12 +10,14 @@ import { Mascota} from '../mascota';
 })
 export class MascotaListComponent implements OnInit {
 
-  constructor(private mascotaService: MascotaService) {}
+  constructor(private mascotaService: MascotaService) { }
 
   /**
   * La lista de mascotas.
   */
-  mascotas: Mascota[];
+  @Input() mascotas: Mascota[];
+
+  @Input() allMascotas: boolean = true;
 
   /**
    * Retorna todas las mascotas en el sistema
@@ -26,11 +28,14 @@ export class MascotaListComponent implements OnInit {
     );
   }
 
+
+  /**
+ * Al iniciar el componente llama el metodo getMascotas()
+ */
   ngOnInit() {
-    /**
-     * Al iniciar el componente llama el metodo getMascotas()
-     */
-    this.getMascotas();
+    if (this.allMascotas) {
+      this.getMascotas();
+    }
   }
 
 }

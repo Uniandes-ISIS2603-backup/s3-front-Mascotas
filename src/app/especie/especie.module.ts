@@ -4,6 +4,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
 import {NgxPermissionsModule} from 'ngx-permissions';
+import {RazaModule} from '../raza/raza.module';
 
 
 import { EspecieListComponent } from './especie-list/especie-list.component';
@@ -12,6 +13,7 @@ import { EspecieCreateComponent } from './especie-create/especie-create.componen
 import {AppRoutingModule} from '../routing-module/app-routing.module';
 import { EspecieDetailComponent } from './especie-detail/especie-detail.component';
 
+
 @NgModule({
   imports: [
     CommonModule,
@@ -19,10 +21,11 @@ import { EspecieDetailComponent } from './especie-detail/especie-detail.componen
     FormsModule,
     NgxPermissionsModule,
     HttpClientModule,
-    BrowserModule
+    BrowserModule,
+    RazaModule
   ],
   providers: [EspecieService],
-  declarations: [EspecieListComponent, EspecieCreateComponent, EspecieDetailComponent],
+  declarations: [ EspecieListComponent, EspecieCreateComponent, EspecieDetailComponent],
   exports: [EspecieListComponent, EspecieCreateComponent, EspecieDetailComponent]
 })
 export class EspecieModule { }

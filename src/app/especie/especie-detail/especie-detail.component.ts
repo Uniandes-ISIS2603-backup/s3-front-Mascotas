@@ -10,7 +10,7 @@ import { EspecieDetail } from '../especie-detail';
 })
 export class EspecieDetailComponent implements OnInit {
 
-
+ 
   /**
   * El id del author que viene en el path get .../especies/especie_id
   */

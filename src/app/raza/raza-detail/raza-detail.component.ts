@@ -29,7 +29,6 @@ export class RazaDetailComponent implements OnInit {
   ngOnInit() {
     this.razaId = +this.route.snapshot.paramMap.get('id');
     this.razaDetail = new RazaDetail();
-
     this.getRazaDetail();
   }
 
