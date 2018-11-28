@@ -106,8 +106,8 @@
             <a class="dropdown-item" style="color: #2c2c2c" class="nav-item nav-link" routerLink="/especie/create" *ngxPermissionsOnly="['ADMIN']">Crear Especie</a>
           </div>
         </li>
-        <a id="authors-navbar-item" class="nav-item nav-link" routerLink="/cliente/list">Clientes</a>
-        <a id="editorials-navbar-item" class="nav-item nav-link" routerLink="/compra/list">Compras</a>
+        <a id="authors-navbar-item" *ngxPermissionsOnly="['ADMIN']" class="nav-item nav-link" routerLink="/cliente/list">Clientes</a>
+        <a id="editorials-navbar-item" *ngxPermissionsOnly="['ADMIN']" class="nav-item nav-link" routerLink="/compra/list">Compras</a>
         <!--<a id="editorials-navbar-item" class="nav-item nav-link" routerLink="/historia/list">Historias</a>-->
         <!--<a id="editorials-navbar-item" class="nav-item nav-link" routerLink="/calificacion/list">Calificaciones</a>-->
       </ul>
