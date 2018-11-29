@@ -19,8 +19,8 @@ export class EspecieService {
    * Obtiene todas las especies registradas en el sistema
    */
   getEspecies(): Observable<EspecieDetail[]> {
-    //    return this.http.get<EspecieDetail[]>(API_URL + especies);
-    return this.http.get<EspecieDetail[]>('../../assets/especies.json');
+        return this.http.get<EspecieDetail[]>(API_URL + especies);
+   // return this.http.get<EspecieDetail[]>('../../assets/especies.json');
   }
 
   /**
@@ -28,8 +28,8 @@ export class EspecieService {
    * @param especieId
    */
   getEspecieDetail(especieId): Observable<EspecieDetail> {
-   // return this.http.get<EspecieDetail>(API_URL + especies + '/' + especieId);
-   return this.http.get<EspecieDetail>('../../assets/especies' +especieId + '.json');
+    return this.http.get<EspecieDetail>(API_URL + especies + '/' + especieId);
+  // return this.http.get<EspecieDetail>('../../assets/especies' +especieId + '.json');
 
   }
 

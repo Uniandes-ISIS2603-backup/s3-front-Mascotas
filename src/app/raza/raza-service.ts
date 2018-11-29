@@ -22,8 +22,8 @@ export class RazaService {
  * @returns The list of razas in real time
  */
   getRazas(): Observable<RazaDetail[]> {
-    //return this.http.get<RazaDetail[]>(API_URL + razas);
-    return this.http.get<RazaDetail[]>('../../assets/razas.json');
+    return this.http.get<RazaDetail[]>(API_URL + razas);
+    //return this.http.get<RazaDetail[]>('../../assets/razas.json');
   }
 
   /**
@@ -31,8 +31,8 @@ export class RazaService {
    * @param razaId
    */
   getRazaDetail(razaId): Observable<RazaDetail> {
-    //return this.http.get<RazaDetail>(API_URL + razas + '/' + razaId);
-    return this.http.get<RazaDetail>('../../assets/razas' + razaId + '.json');
+    return this.http.get<RazaDetail>(API_URL + razas + '/' + razaId);
+    //return this.http.get<RazaDetail>('../../assets/razas' + razaId + '.json');
   }
 
   /**
@@ -45,17 +45,17 @@ export class RazaService {
 
 
   /**
-  * la mascota que se desea encontrar
+  * la raza que se desea encontrar
    */
   getRaza(razaId): Observable<Raza> {
-    //return this.http.get<Mascota>(API_URL + razas + '/' + razaId);
-    return this.http.get<Raza>('../../assets/razas1.json');
+    return this.http.get<Raza>(API_URL + razas + '/' + razaId);
+    //return this.http.get<Raza>('../../assets/razas1.json');
   }
 
 
 
   /**
-   * Elimina una mascota
+   * Elimina una raza
    */
   deleteRaza(razaId): Observable<boolean> {
     return this.http.delete<boolean>(API_URL + razas + '/' + razaId);

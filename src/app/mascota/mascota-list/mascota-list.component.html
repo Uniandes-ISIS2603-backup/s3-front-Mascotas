@@ -45,7 +45,7 @@
     </div>
     <div class="col-9">
         <div *ngIf="showEdit">
-            <app-mascota-edit (cancel)="showHideEdit(selectedEspecie.id)" [mascota]="selectedMascota"></app-mascota-edit>
+            <app-mascota-edit [mascota]="selectedMascota"></app-mascota-edit>
         </div>
     </div>
   </div>

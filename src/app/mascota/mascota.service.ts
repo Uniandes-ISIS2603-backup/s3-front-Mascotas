@@ -23,8 +23,8 @@ export class MascotaService {
  * @returns The list of authors in real time
  */
   getMascotas(): Observable<Mascota[]> {
-    //return this.http.get<Mascota[]>(API_URL + mascotas);
-    return this.http.get<Mascota[]>(temporal);
+    return this.http.get<Mascota[]>(API_URL + mascotas);
+    //return this.http.get<Mascota[]>(temporal);
   }
 
 
@@ -41,8 +41,8 @@ export class MascotaService {
   * la mascota que se desea encontrar
  */
   getMascota(mascotaId): Observable<Mascota> {
-    //return this.http.get<Mascota>(API_URL + mascotas + '/' + mascotaId);
-    return this.http.get<Mascota>('../../assets/mascotas1.json');
+    return this.http.get<Mascota>(API_URL + mascotas + '/' + mascotaId);
+    //return this.http.get<Mascota>('../../assets/mascotas1.json');
 
   }
 
