@@ -67,7 +67,7 @@ export class MascotaListComponent implements OnInit {
         this.mascota_id = mascota_id;
         this.selectedMascota = new Mascota();
         this.getMascota();
-    }
+    } 
 
     /**
      * Obtiene una mascota especificamente por su id
@@ -107,7 +107,7 @@ export class MascotaListComponent implements OnInit {
         ]
     });
 }
-
+ 
   /**
  * Al iniciar el componente llama el metodo getMascotas()
  */

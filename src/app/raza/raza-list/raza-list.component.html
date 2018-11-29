@@ -27,13 +27,22 @@
   
       <div class="col-lg-3 col-xs-6 " *ngFor="let raza of razas">
   
-        <div class="card mb-3 mt-3" style="cursor: pointer" routerLink="/raza/{{raza.id}}">
+        <div class="card mb-3 mt-3" >
   
-          <img class="card-img-top img-responsive p-2 " width="300" src="{{raza.imagen}}">
+          <img class="card-img-top img-responsive p-2 " width="300" src="{{raza.imagen}}" style="cursor: pointer" routerLink="/raza/{{raza.id}}">
   
           <div class="card-body">
   
             <h6 class="card-title  text-center">{{raza.nombre}}</h6>
+
+            <div class="row form-inline justify-content-center align-self-center ">
+              <div *ngxPermissionsOnly="['ADMIN']">
+                <button class="btn btn-primary mr-3"  style="cursor: pointer;" (click)="showHideEdit(raza.id)" > <span class="fa fa-pencil"></span>Editar</button>
+              </div>
+              <div *ngxPermissionsOnly="['ADMIN']">
+                <button class="btn btn-danger" (click)="deleteRaza(raza.id)" ><span class="fa fa-trash"></span>Eliminar</button>
+              </div>
+            </div>
   
           </div>
           
@@ -41,6 +50,11 @@
   
       </div>
       
+    </div>
+    <div class="col-9">
+        <div *ngIf="showEdit">
+            <app-raza-edit  [raza]="selectedRaza"></app-raza-edit>
+        </div>
     </div>
   
   </div>

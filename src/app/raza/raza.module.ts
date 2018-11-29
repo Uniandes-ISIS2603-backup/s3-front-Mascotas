@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import {NgxPermissionsModule} from 'ngx-permissions';
+
 
 
 import { BrowserModule } from '@angular/platform-browser';
@@ -12,17 +14,20 @@ import { RazaListComponent } from './raza-list/raza-list.component';
 import { RazaDetailComponent } from './raza-detail/raza-detail.component';
 import { RazaCreateComponent } from './raza-create/raza-create.component';
 import { RazaService } from './raza-service';
+import { RazaEditComponent } from './raza-edit/raza-edit.component';
+
 
 @NgModule({
   imports: [
     BrowserModule,
-    AppRoutingModule,
+    AppRoutingModule, 
     HttpClientModule,
     CommonModule,
     FormsModule,
-    MascotaModule
+    MascotaModule,
+    NgxPermissionsModule
   ],
-  declarations: [ RazaListComponent, RazaDetailComponent, RazaCreateComponent],
+  declarations: [ RazaListComponent, RazaDetailComponent, RazaCreateComponent, RazaEditComponent],
   providers : [ RazaService] ,
   exports : [ RazaListComponent, RazaDetailComponent, RazaCreateComponent]
 })
