@@ -80,7 +80,7 @@ const routes: Routes = [
       },
       {
         path: ':id',
-        component: CompraDetailComponent
+        component: CompraCreateComponent
       }
     ]
   },

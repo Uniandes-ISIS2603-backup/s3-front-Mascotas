@@ -1,3 +1,5 @@
+import { Mascota } from '../mascota/mascota';
+import {Cliente} from '../cliente/cliente';
 /**
  * Clase que representa la compra de una mascota
  */
@@ -7,7 +9,7 @@
     /**
      * Representa el identificador de la compra.
      */
-    mascotaId: number;
+    mascota: Mascota;
 
     /**
      * Representa el precio con el que se compro una mascota.
@@ -18,4 +20,15 @@
    * Representa el tipo de pago con el que se compro una mascota
    */
   tipoDePago: string;
+
+  /**
+   * Representa la especie de una raza.
+   */
+  relacionCliente : Cliente;
+
+
+  constructor(){
+    this.mascota = new Mascota();
+    this.relacionCliente = new Cliente();
+  }
  }

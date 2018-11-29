@@ -28,6 +28,9 @@
             <p class="card-text">Precio : {{mascota.precio}}</p>
 
             <div class="row form-inline justify-content-center align-self-center ">
+              <div *ngxPermissionsOnly="['CLIENT']">
+                <button class="btn btn-success mr-3"  style="cursor: pointer;" routerLink="/compra/{{mascota.id}}" > <span class="fa fa-pencil"></span>Comprar</button>
+              </div>
               <div *ngxPermissionsOnly="['ADMIN']">
                 <button class="btn btn-primary mr-3"  style="cursor: pointer;" (click)="showHideEdit(mascota.id)" > <span class="fa fa-pencil"></span>Editar</button>
               </div>
