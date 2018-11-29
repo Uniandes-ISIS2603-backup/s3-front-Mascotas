@@ -49,7 +49,15 @@ export class MascotaService {
   /**
    * Edita la mascota que se desea.
    */
-  editarMascota(mascota) : Observable<Mascota> {
-    return this.http.put<Mascota> (API_URL + mascotas + '/' + mascota.id, mascota);
+  editarMascota(mascota): Observable<Mascota> {
+    return this.http.put<Mascota>(API_URL + mascotas + '/' + mascota.id, mascota);
   }
+
+  /**
+   * Elimina una mascota
+   */
+  deleteMascota(mascotaId): Observable<boolean> {
+    return this.http.delete<boolean>(API_URL + mascotas + '/' + mascotaId);
+  }
+
 }

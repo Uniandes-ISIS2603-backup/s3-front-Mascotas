@@ -1,7 +1,9 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component, OnInit, Input, ViewContainerRef } from '@angular/core';
 import { MascotaService } from '../mascota.service';
+import {ModalDialogService, SimpleModalComponent} from 'ngx-modal-dialog';
 import { Mascota } from '../mascota';
+import { ToastrService } from 'ngx-toastr';
+
 
 @Component({
   selector: 'app-mascota-list',
@@ -10,7 +12,12 @@ import { Mascota } from '../mascota';
 })
 export class MascotaListComponent implements OnInit {
 
-  constructor(private mascotaService: MascotaService) { }
+  constructor(
+    private mascotaService: MascotaService,
+    private modalDialogService: ModalDialogService,
+    private toastrService: ToastrService,
+    private viewRef: ViewContainerRef,
+    ) { }
 
   /**
   * La lista de mascotas.
@@ -72,6 +79,34 @@ export class MascotaListComponent implements OnInit {
     });
   }
 
+
+
+    /**
+    * Elimina una especie. 
+    */
+   deleteMascota(mascotaId): void {
+    this.modalDialogService.openDialog(this.viewRef, {
+        title: 'Eliminar una Mascota',
+        childComponent: SimpleModalComponent,
+        data: {text: '¿Está seguro que desea eliminar esta mascota de la tienda PetsUniandes?'},
+        actionButtons: [
+            {
+                text: 'Yes',
+                buttonClass: 'btn btn-danger',
+                onAction: () => {
+                    this.mascotaService.deleteMascota(mascotaId).subscribe(() => {
+                        this.toastrService.error("La mascota fue eliminada exitosamente", "Mascota eliminada");
+                        this.ngOnInit();
+                    }, err => {
+                        this.toastrService.error(err, "Error");
+                    });
+                    return true;
+                }
+            },
+            {text: 'No', onAction: () => true}
+        ]
+    });
+}
 
   /**
  * Al iniciar el componente llama el metodo getMascotas()
